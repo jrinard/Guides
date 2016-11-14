@@ -1,0 +1,8 @@
+Ruby debugging
+
+
+1. Check rspec for obvious errors
+
+2. puts(word)    Works like console.log
+
+3. binding.pry works like debugger
