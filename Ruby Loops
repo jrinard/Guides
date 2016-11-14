@@ -1,0 +1,369 @@
+Ruby Loops
+
+
+----------- Times Loop
+
+// adds names to an array
+names = []
+  5.times() do
+  names.push("ellen")
+end
+
+
+// removed last 3 numbers of array
+names = [1,2,3,4,5,6,7,8]
+  3.times() do
+  names.pop()
+end
+
+// add a number to itself
+total = 1
+5.times() do |x|
+ total = total.+(x)
+ end
+
+ // Array pushing
+ names = []
+   5.times() do |x|
+   names.push(x).push(x).push(x)
+ end
+
+
+------------  EACH LOOP
+
+
+// each loop in friends and name it friend
+friends = ["john", "James", "Jesus"]
+friends.each() do |friend|
+  friend.concat(" loves programming")
+end
+
+//Each loops through array and does something.
+numbers = (1..10)
+sum = 0
+numbers.each() do |number|
+  sum = sum.+(number)
+end
+
+//Each loops through array and does something.
+numbers = (1..10)
+multiply = 2
+numbers.each() do |number|
+  multiply = multiply.*(number)
+end
+
+//remember you need to assign the values to a new array
+names = ["john", "James", "Jesus"]
+new_names = []
+
+names.each() do |name|
+  new_names.push(name.upcase())
+end
+
+// each numbers
+numbers = [1,2,3]
+new_numbers = []
+
+numbers.each() do |number|
+  new_number = number.+(1)
+  new_numbers.push(new_number)
+end
+
+
+// each loop through array and push values multiple times
+drink = ["p","e","p","s","i"]
+new_drink = []
+drink.each() do |x|
+  new_drink.push(x).push(x).push(x)
+end
+
+// each loop from string to array
+new_drink = []
+new_drink_2 = []
+drink = "pepsi"
+new_drink = drink.split("")
+new_drink.each() do |x|
+  new_drink_2.push(x).push(x).push(x)
+
+end
+
+------------  METHODS USING LOOPS
+
+// method that uses a loop to turn upcase. string is the paramater // remember to return the array
+class Array
+ define_method(:upcase) do
+    new_array = []
+    self.each() do |string|
+      upcased_string = string.upcase()
+      new_array.push(upcased_string)
+    end
+    new_array
+  end
+end
+
+
+//Range method to add numbers // call total
+class Range
+  define_method(:sum) do
+    total = 0
+    self.each() do |number|
+      total = total.+(number)
+    end
+    total
+  end
+end
+
+
+------------  Boolean Objects
+
+
+age = 25
+if age.>=(21)
+  "You can drink"
+else
+  "you can't drink"
+end
+
+age = 26
+if age.even?()
+  "Your number is even"
+else
+  "your number is odd"
+end
+
+
+// include?
+my_number = 8
+lucky_numbers = [7, 13]
+if lucky_numbers.include?(my_number)
+   "your number is lucky"
+ else
+   "your number is not lucky"
+ end
+
+// include?
+num = 11
+numbers = [7, 13, 15, 11, 111]
+ if numbers.include?(num)
+    "your number is in there"
+  else
+    "your number is NOT in there"
+  end
+
+
+// range
+num = 11
+numbers = 1..10
+  if numbers.cover?(num)
+    "your number is in the range"
+  else
+    "your number is NOT in the range"
+end
+
+
+------------  Methods using branches and booleans
+
+//absolute value example
+class Fixnum
+   define_method(:abs) do
+     if self.>=(0)
+       self
+     else
+       self.*(-1)
+     end
+   end
+ end
+// example -5.abs()
+
+// capitalize vowels on a string
+class String
+   define_method(:capitalize_vowels) do
+     vowels = ["a", "e", "i", "o", "u"]
+     old_letters = self.split("") # this splits on an empty string, which splits each character
+     new_letters = []
+     old_letters.each() do |letter|
+       if vowels.include?(letter)
+         new_letter = letter.upcase()
+       else
+        new_letter = letter
+       end
+       new_letters.push(new_letter)
+     end
+     new_letters.join()
+   end
+ end
+
+// method to compare age to get true or false because of boolean
+ class Fixnum
+   define_method(:can_vote?) do
+    self.>=(18)
+   end
+ end
+
+ class Fixnum
+   define_method(:can_drink?) do
+    self.>=(21)
+   end
+ end
+
+
+// simpler vowel checker // include auto returns true or false // "apple".starts_with_vowel?()
+ class String
+   define_method(:starts_with_vowel?) do
+     vowels = ["a", "e", "i", "o", "u"]
+     letters = self.split("")
+     first_letter = letters.first()
+     vowels.include?(first_letter)
+   end
+ end
+
+ //absolute value example  // example 5.absolute_larger()
+ class Fixnum
+    define_method(:absolute_larger) do
+      if self.>=(0)
+        self.+(1)
+      else
+        self.-(1)
+      end
+    end
+  end
+
+  class Fixnum
+     define_method(:has_two_digits?) do
+       if self.>(10)
+         true
+         if self.<(100)
+           true
+       else
+         false
+       end
+     end
+   end
+   end
+
+
+// complex branching with &
+   age = 25
+   gender = :male
+
+   young = age.<(26)
+   male = gender.eql?(:male)
+
+   if young.&(male)
+     "Your insurance is going to be so expensive!!!"
+   else
+      "Your insurance is going to be expensive, but it could be worse."
+    end
+
+
+// complex branching with elsif
+   age = 25
+   gender = :male
+
+   young = age.<(26)
+   male = gender.eql?(:male)
+
+  if young.&(male)
+     "Your insurance is going to be so expensive!!!"
+  elsif young.|(male)
+     "Your insurance is going to be pretty expensive"
+  elsif male
+     "Your insurance is going to be super expensive"
+  else
+      "Your insurance is going to be expensive, but it could be worse."
+  end
+
+
+// if equals
+   my_city_state = "Portland, OR"
+   if my_city_state.==("Washington, DC")
+   "You live in the nation's capital!"
+   end
+
+// or |
+Young.|(male)
+
+// not !
+
+// not !
+age = 26
+ gender = :female
+
+ young = age.<(26)
+ male = gender.eql?(:male)
+
+ if young.&(male).!()
+   "You are going to get the best insurance rates."
+ end
+
+
+// Else if ==
+grade = "b"
+
+if grade.==("a")
+"You got a a"
+elsif grade.==("b")
+"You got a b"
+elsif grade.==("c")
+"You got a c"
+else grade.==("d")
+"You got a d"
+end
+
+
+// if name compares first char
+
+name = "Joshua"
+if name.split("").at(0).==("J")
+"First letter is a J"
+end
+
+------------  Methods Extended
+
+//Scramble
+
+class String
+  define_method(:scramble) do
+    self.reverse().upcase()
+  end
+end
+
+//Scramble no self
+class String
+  define_method(:scramble) do
+    reverse().upcase()
+  end
+end
+
+
+//Random number
+rand(6)
+
+// Returns input  "foo".i_am()
+
+class String
+  define_method(:i_am) do
+    self
+  end
+
+// Returns string class  "foo".i_am_a()
+  define_method(:i_am_a) do
+    self.class
+  end
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-
