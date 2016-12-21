@@ -29,7 +29,22 @@ git add .
 git status
 git commit -m “message”
 git push jr master
-
+  
+  
+Git Merging Order
+  Assuming you have been working on a branch
+  git checkout master   
+  git pull origin master    - pull in clean master
+  git checkout {branch}     
+  git rebase -i master      - merging branch with master
+  :wq
+  push origin {branch}
+  create pull request on github
+  Accept request
+  git branch -D {branch}     - deletes branch
+  git pull origin master
+  create branch
+  checkout branch
  
 </body>
 </html>
