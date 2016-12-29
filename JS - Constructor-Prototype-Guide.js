@@ -1,3 +1,6 @@
+node.js project setup
+Get into project folder
+
 npm init                         
     Give it a name
 npm install gulp --save-dev
