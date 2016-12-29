@@ -1,3 +1,10 @@
+npm init                         
+    Give it a name
+npm install gulp --save-dev
+npm install browserify --save-dev
+
+
+
 
 
 // --------- Alien Constructor
