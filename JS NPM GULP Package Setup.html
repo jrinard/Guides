@@ -1,0 +1,58 @@
+
+Definitions
+
+Node.js: Environment that allows JavaScript to run from the command line.
+Gulp: A JavaScript package that automates development tasks such as running browserify or concatenating JavaScript files.
+Node Modules: Link front and back end files together with exports
+Module. is a group of JavaScript functions and data that comprises some sort of functionality.
+
+
+Installing Packages
+This process allows files to be compiled at the right time.
+
+1. NPM. Node Package Manager -  npm init
+			- will create Package.json which is our manifest that stores our packages
+
+NPM Packages
+2. Gulp - npm install gulp --save-dev  or for global npm install gulp -g
+			- optimizes our code and packages it up in a format that the browser can 					   			 
+			  understand. It is also in charge or using all the other npm packages
+			- will create node_modules which will be ignored
+			- saves package list to package.json - similar to ruby cache.
+			- gulp is used in development 
+			- will need to make a gulpfile.js  which will need require and gulp.task code
+			- gulp tasks need to be run in terminal each time your files change as you develop - gulp jsBrowserify
+
+3. Browserify - npm install browserify --save-dev
+			  - is responsible for using require and exports keywords to translate the code into JavaScript our browser does understand. 
+			  - follows the require statements in the interface and collects all the code
+			  - Gulp is used to run browserify	
+
+4. Gitignore 	- .gitignore   node_modules
+			- Commit the package.json file with the project but not the node_modules
+
+5. When we clone the project to continue working on it, we simply run npm install and all packages saved to the manifest file will be downloaded into a new node_models/ folder
+
+4. Vinyl-source-stream - npm install vinyl-source-stream --save-dev
+					    - used for putting the browserified source code into a new file
+
+5. Gulp - Concat - npm install gulp-concat --save-dev
+				 - process of consolidating multiple interface files files into one 
+				 - run gulp jsBrowserify for new version of browserify
+
+6. Minifying with Gulp-uglify - npm install gulp-uglify --save-dev
+			 			    - After require is added to gulpfile/tasks then you need to run gulp minifyScripts
+
+7. Environmental Pro/Dev  with Gulp-util -  npm install gulp-util --save-dev
+			 			    - Run   gulp build --production 				for production
+						    - Run   gulp build 					 for developmental
+
+8. Clean Tasks with del - npm install del --save-dev					 
+					   - used to delete tmp and build folder
+
+9. JSHint - linter - npm install jshint --save-dev
+				- npm install gulp-jshint --save-dev					 
+				 -  run gulp jshint to find errors
+
+
+
