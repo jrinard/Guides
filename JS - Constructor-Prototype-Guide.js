@@ -1,22 +1,3 @@
-node.js project setup
-Get into project folder
-
-npm init                         
-    Give it a name
-npm install gulp --save-dev
-npm install browserify --save-dev
-npm install vinyl-source-stream --save-dev
-
-
-When we start a new project, we run the $ npm init command.
-Download each package that our project needs using either the --save-dev flag for development dependencies.
-Commit the package.json file with the project but not the node_modules/ folder.
-When we clone a project to continue working on it, we simply run $ npm install and all packages saved to the manifest file will be downloaded into a new node_modules/ folder.
-
-
-
-
-
 
 // --------- Alien Constructor
 function Alien(kind, color, scream){
