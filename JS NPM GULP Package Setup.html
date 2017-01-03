@@ -18,12 +18,12 @@ Initial setup as long as they are in the packagejson - cloning
 
 1. NPM. Node Package Manager -  npm init  
 			- will create Package.json which is our manifest that stores our packages
+			- will create node_modules which will be ignored
 
 NPM Packages
 2. Gulp - npm install gulp --save-dev  or for global npm install gulp -g
 			- optimizes our code and packages it up in a format that the browser can 					   			 
 			  understand. It is also in charge or using all the other npm packages
-			- will create node_modules which will be ignored
 			- saves package list to package.json - similar to ruby cache.
 			- gulp is used in development 
 			- will need to make a gulpfile.js  which will need require and gulp.task code
@@ -43,11 +43,11 @@ NPM Packages
 					    - used for putting the browserified source code into a new file
 
 5. Gulp - Concat - npm install gulp-concat --save-dev
-				 - process of consolidating multiple interface files files into one 
+				 - process of consolidating multiple interface files into one 
 				 - run gulp jsBrowserify for new version of browserify
 
 6. Minifying with Gulp-uglify - npm install gulp-uglify --save-dev
-			 			    - After require is added to gulpfile/tasks then you need to run gulp minifyScripts
+			 	- After require is added to gulpfile/tasks then you need to run gulp minifyScripts
 
 7. Environmental Pro/Dev  with Gulp-util -  npm install gulp-util --save-dev
 			 			    - Run   gulp build --production 				for production
@@ -56,8 +56,8 @@ NPM Packages
 8. Clean Tasks with del - npm install del --save-dev					 
 					   - used to delete tmp and build folder
 
-9. JSHint - linter - npm install jshint --save-dev
-				- npm install gulp-jshint --save-dev					 
+9. JSHint - linter - npm install jshint --save-dev    and 
+		   - npm install gulp-jshint --save-dev					 
 				 -  run gulp jshint to find errors
 
 // Front-end to handle dependencies like jquery and bootstrapPing
