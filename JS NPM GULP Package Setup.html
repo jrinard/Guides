@@ -11,6 +11,7 @@ Installing Packages
 This process allows files to be compiled at the right time.
 
 
+
 Initial setup as long as they are in the packagejson - cloning
   - npm install 
   - bower install
@@ -36,6 +37,12 @@ NPM Packages
 
 4. Gitignore 	- .gitignore   node_modules
 			- Commit the package.json file with the project but not the node_modules
+node_modules/
+bower_components/
+build/
+temp/
+.DS_Store
+
 
 5. When we clone the project to continue working on it, we simply run npm install and all packages saved to the manifest file will be downloaded into a new node_models/ folder
 
