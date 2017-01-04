@@ -1,26 +1,26 @@
 
-CLONING
+WORKFLOW from clone
 Initial setup as long as package.json and bower.json list dependencies
   - npm install 
   - bower install
   - gulp build
 
 
-MAIN
-	Step 1. Install Packages and make dependencies
-
+WORKFLOW from scratch
+   Step 1. npm init
+   Step 2. npm install gulp --save-dev  			or npm install gulp -g for global
+   Step 3. create gulpfile.js
+   Step 4. Install dependencies
 
 
 1. NPM. Node Package Manager -  npm init  
 			- will create Package.json which is our manifest that stores our packages
 			- will create node_modules which will be ignored
-
 NPM Packages
 2. Gulp - npm install gulp --save-dev  or for global npm install gulp -g
 			- optimizes our code and packages it up in a format that the browser can 					   			 
 			  understand. It is also in charge or using all the other npm packages
 			- saves package list to package.json - similar to ruby cache.
-			- gulp is used in development 
 			- will need to make a gulpfile.js  which will need require and gulp.task code
 			- gulp tasks need to be run in terminal each time your files change as you develop - gulp jsBrowserify
 
