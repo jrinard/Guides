@@ -1,25 +1,25 @@
-
 // --------- Alien Constructor
-function Alien(kind, color, scream){
+function Alien(kind, color, attr, scream){
     this.kind = "alien";
-    this.shade = "green";
-    this.testArray = ["fight", "run"]
+    this.color = "green";
+    this.attr = ["fight", "run"]
     this.scream = function() {console.log("I come in peace")};
 };
 // Makes Zack an instance of Alien
 var zack = new Alien();
 
-// makes a prototype for zack or anyone to use that is considered an alien
-Alien.prototype.headSize = function() {
-  console.log('proto is working');
-
+//makes a prototype for zack or anyone to use that is considered an alien
+//makes a new prototype with the list from above
+Alien.prototype.attackPeople = function() {
+  console.log('Starts Shooting Blaster');
 };
 
-//calls it
-console.log(zack.kind);
-
-//zack.testArray[0] to call array
-
+//access it
+console.log(zack.kind)
+zack.color
+zack.attr[0]
+zack.scream()
+zack.attackPeople()
 
 
 // ---------- Task List Constructor using categories to pass data into
