@@ -1,5 +1,9 @@
-Ruby debugging
+Ruby Basics
 
+Start Server - ruby app.rb
+
+
+Ruby Debugging
 
 1. Check rspec for obvious errors
 
