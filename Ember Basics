@@ -1,0 +1,11 @@
+
+INSTALLING EMBER
+    brew install node
+      node -v
+      npm -v
+    npm install -g bower
+    brew install watchman
+    npm install -g ember-cli
+    ember new project-name
+    cd project-name
+    Test it worked with - ember server    localhost:4200
