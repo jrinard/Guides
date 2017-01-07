@@ -1,5 +1,8 @@
 Ruby Basics
 
+Setup Database
+bundle exec rake db:migrate
+
 Start Server - ruby app.rb
 
 
