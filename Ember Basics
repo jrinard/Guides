@@ -10,4 +10,6 @@ INSTALLING EMBER
 EMBER PROJECT
     ember new project-name
     cd project-name
-    ember server    localhost:4200
+    ember serve or s or server    localhost:4200
+
+    ember generate route about      
