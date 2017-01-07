@@ -12,4 +12,6 @@ EMBER PROJECT
     cd project-name
     ember serve or s or server    localhost:4200
 
-    ember generate route about      
+
+
+    ember generate route about  
