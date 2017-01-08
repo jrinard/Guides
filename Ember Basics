@@ -17,3 +17,9 @@ EMBER PROJECT
     ember g route about  
     ember g model rental
     ember install emberfire
+    ember g component rental-tile
+    
+    
+    
+    Data down, actions up
+    That means data like rentals names is pulled down from firebase while a button click action rises up from the components
