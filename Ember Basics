@@ -18,7 +18,7 @@ EMBER PROJECT
     ember g model rental
     ember install emberfire
     ember g component rental-tile
-    
+    ember g component new-rental
     
     
     Data down, actions up
