@@ -16,3 +16,4 @@ EMBER PROJECT
 
     ember g route about  
     ember g model rental
+    ember install emberfire
