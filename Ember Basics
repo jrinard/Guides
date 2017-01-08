@@ -14,4 +14,5 @@ EMBER PROJECT
 
 
 
-    ember generate route about  
+    ember g route about  
+    ember g model rental
