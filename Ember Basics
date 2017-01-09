@@ -23,3 +23,13 @@ EMBER PROJECT
     
     Data down, actions up
     That means data like rentals names is pulled down from firebase while a button click action rises up from the components
+
+
+FireBase
+Rules
+{
+  "rules": {
+    ".read": true,
+    ".write": true
+  }
+}
