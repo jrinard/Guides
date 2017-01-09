@@ -19,6 +19,7 @@ EMBER PROJECT
     ember install emberfire
     ember g component rental-tile
     ember g component new-rental
+    ember install ember-bootstrap
     
     
     Data down, actions up
