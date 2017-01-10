@@ -87,10 +87,18 @@ ROUGH Runthrough
     temp/index - added new-post savePost2
     routes/index.js - savePost3
     
-   DETAIL POST
+   DETAIL POST ID MANAGEMENT
    ember g route post
    router.js - path
    routes/post.js - model + post_id
+   edit component post-tile - link-to 'post' post.id
+   The ID is now accessable for post
+   
+   VIEW SINGLE POST
+   ember g component post-detail
+   edit temp/post.hbs - add model.title + post-detail
+   edit post-detail.hbs - with post.title
+
 
 
 
