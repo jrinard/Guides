@@ -86,7 +86,11 @@ ROUGH Runthrough
     comp/new-post.js   - savePost1
     temp/index - added new-post savePost2
     routes/index.js - savePost3
-
+    
+   DETAIL POST
+   ember g route post
+   router.js - path
+   routes/post.js - model + post_id
 
 
 
