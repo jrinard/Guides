@@ -18,10 +18,10 @@ EMBER PROJECT
    2. app/router.js
    3. app.templates/about.hbs
    4. ember g model rental
-    ember install emberfire
+      ember install emberfire
    6. ember g component rental-tile  - allows delete 
    7. ember g component new-rental  - allows create
-   8 .ember g component update-rental - allows update
+   8. ember g component update-rental - allows update
     ember install ember-bootstrap
     
     
