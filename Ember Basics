@@ -74,12 +74,18 @@ ROUGH Runthrough
                 - add model()
     ember g model post
                 - models/post.js
-        
-        
-ember g component post-tile
+   SHOW POST             
+    ember g component post-tile
         edit index to link to post-title
         edit templates/components/post-tile.hbs
         edit components/post-tile.js
+        
+  ADD CREATE
+    ember g component new-post
+    temp/comp/new-post.hbs   - added form
+    comp/new-post.js   - savePost1
+    temp/index - added new-post savePost2
+    routes/index.js - savePost3
 
 
 
