@@ -98,6 +98,15 @@ ROUGH Runthrough
    ember g component post-detail
    edit temp/post.hbs - add model.title + post-detail
    edit post-detail.hbs - with post.title
+   
+   DELETE SINGLE POST
+   tmp/comp/post-detail - add action delete
+   comp/post-detail - delete
+   tmp/post/hbs - destroyPost
+   routes/post.js - action destroyPost
+   
+   UPDATE SINGLE POST
+   
 
 
 
