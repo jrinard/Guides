@@ -7,24 +7,32 @@ INSTALLING EMBER
     brew install watchman
     npm install -g ember-cli
     
+Setup from Clone
+    npm install
+    bower install
+    
+Setup from Scratch
+    npm install
+    bower install
+    ember install ember-bootstrap
+    
+    
+    
+    
 EMBER PROJECT
     ember new project-name
     cd project-name
     ember serve or s or server    localhost:4200
 
 
-
    1. ember g route about       
    2. app/router.js
    3. app.templates/about.hbs
    4. ember g model rental
-      ember install emberfire
    6. ember g component rental-tile  - allows delete 
    7. ember g component new-rental  - allows create
    8. ember g component update-rental - allows update
-    ember install ember-bootstrap
-    
-    ember g component rental-detail
+   9. ember g component rental-detail
     
     
     
