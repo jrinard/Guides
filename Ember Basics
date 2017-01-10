@@ -59,9 +59,15 @@ Rules
     ".write": true
   }
 }
-Rough run
+
+ROUGH Runthrough
+    ember new project-name
+    npm install
+    bower install
+    ember install ember-bootstrap
 1. FireBase
-    
+    - ember install emberfire  - creates adapters folder
+    -rules
 2. application.hbs
 3. ember install ember-bootstrap
 4. ember g route index 
