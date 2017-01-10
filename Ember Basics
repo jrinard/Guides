@@ -33,7 +33,14 @@ EMBER PROJECT
    7. ember g component new-rental  - allows create
    8. ember g component update-rental - allows update
    9. ember g component rental-detail
-    
+   
+   Dynamic Segment
+    app/router.js
+                path etc
+    app/routes/rental.js
+                findRecord
+    app/tempaltes/rental.hbs
+                {{model.owner}}'s {{model.type}}
     
     
     Data down, actions up
