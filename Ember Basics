@@ -59,8 +59,14 @@ Rules
     ".write": true
   }
 }
-
+Rough run
 1. FireBase
+2. application.hbs
+3. ember install ember-bootstrap
+4. ember g route index 
+5. ember g model post
+        code model
+6. ember g component post-tile
 
 
 
