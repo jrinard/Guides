@@ -70,6 +70,9 @@ Rough run
         code models/post.js
         
 6. ember g component post-tile
+        edit index to link to post-title
+        edit templates/components/post-tile.hbs
+        edit components/post-tile.js
 
 
 
