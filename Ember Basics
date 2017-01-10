@@ -65,17 +65,18 @@ ROUGH Runthrough
     npm install
     bower install
     ember install ember-bootstrap
-1. FireBase
-    - ember install emberfire  - creates adapters folder
-    -rules
-2. application.hbs
-3. ember install ember-bootstrap
-4. ember g route index 
-5. ember g model post
-        code routes.index
-        code models/post.js
+    ember install emberfire             - creates adapters folder 
+                - setup rules
+                - import json
+                - add code to config.envir
+    application.hbs - template
+    ember g route index
+                - add model()
+    ember g model post
+                - models/post.js
         
-6. ember g component post-tile
+        
+ember g component post-tile
         edit index to link to post-title
         edit templates/components/post-tile.hbs
         edit components/post-tile.js
