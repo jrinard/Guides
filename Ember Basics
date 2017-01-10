@@ -35,12 +35,17 @@ EMBER PROJECT
    9. ember g component rental-detail
    
    Dynamic Segment
+   ember g route rental
     app/router.js
                 path etc
     app/routes/rental.js
                 findRecord
-    app/tempaltes/rental.hbs
-                {{model.owner}}'s {{model.type}}
+    app/templates/rental.hbs
+                {{model.owner}}'s {{model.type}} displays a single rental
+    ember g component rental-detail
+    app/templates/components/rental-detail.hbs
+    app/components/rental-detail.js
+    
     
     
     Data down, actions up
