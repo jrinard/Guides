@@ -106,8 +106,10 @@ ROUGH Runthrough
    routes/post.js - action destroyPost
    
    UPDATE SINGLE POST
-   
-
-
+   ember g component update-post
+   edit comp/update-post - updatePostForm
+   edit comp/update-post - update
+   edit tmp/post.hbs - update-post
+   routes/post.js - action update
 
 
