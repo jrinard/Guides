@@ -24,6 +24,8 @@ EMBER PROJECT
    8. ember g component update-rental - allows update
     ember install ember-bootstrap
     
+    ember g component rental-detail
+    
     
     
     Data down, actions up
