@@ -121,6 +121,6 @@ ROUGH Runthrough for Blog
    ember g model review
    app/routes/index.js  - Ember RSVP.hash
    app/models/review.js   - define attr
-   app/templates/index.hbs - model.reviews
+   app/templates/index.hbs - model.rentals and model.reviews 
 
 
