@@ -111,5 +111,10 @@ ROUGH Runthrough
    edit comp/update-post - update
    edit tmp/post.hbs - update-post
    routes/post.js - action update
+   
+   ADMIN PANEL
+   Add link to application.hbs
+   ember g route admin
+  
 
 
