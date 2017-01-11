@@ -60,7 +60,7 @@ Rules
   }
 }
 
-ROUGH Runthrough
+ROUGH Runthrough for Blog
     ember new project-name
     npm install
     bower install
@@ -117,7 +117,7 @@ ROUGH Runthrough
    ember g route admin
   
   
-   ONE TO MANY
+   ONE TO MANY - Done on Rentals First
    ember g model review
    app/models/review.js   - define attr
 
