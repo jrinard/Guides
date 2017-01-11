@@ -119,6 +119,8 @@ ROUGH Runthrough for Blog
   
    ONE TO MANY - Done on Rentals First
    ember g model review
+   app/routes/index.js  - Ember RSVP
    app/models/review.js   - define attr
+   app/templates/index.hbs - model.reviews
 
 
