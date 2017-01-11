@@ -116,5 +116,9 @@ ROUGH Runthrough
    Add link to application.hbs
    ember g route admin
   
+  
+   ONE TO MANY
+   ember g model review
+   app/models/review.js   - define attr
 
 
