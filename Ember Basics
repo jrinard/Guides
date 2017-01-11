@@ -117,10 +117,17 @@ ROUGH Runthrough for Blog
    ember g route admin
   
   
-   ONE TO MANY - Done on Rentals
+   ONE TO MANY - REVIEWS - Done on Rentals
    ember g model review
-   app/routes/index.js  - Ember RSVP.hash
    app/models/review.js   - define attr
-   app/templates/index.hbs - model.rentals and model.reviews 
+   app/routes/index.js  - Ember RSVP.hash
+   app/templates/index.hbs - model.rentals and model.reviews - Important!
+   Seed Firebase with renals and reviews
+   
+   CREATING A NEW REVIEW
+   app/tmp/comp/new-review.hbs - Form with saveReview
+   app/comp/new-review.js - Logic with saveReview
+   app/routes/index.js - action saveReview in route
+   app/tmp/index.hbs - Add new-review save code
 
 
