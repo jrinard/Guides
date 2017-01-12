@@ -112,10 +112,6 @@ ROUGH Runthrough for Blog
    edit tmp/post.hbs - update-post
    routes/post.js - action update
    
-   ADMIN PANEL
-   Add link to application.hbs
-   ember g route admin
-  
   
    ONE TO MANY - REVIEWS - Done on Rentals
    ember g model review
@@ -129,5 +125,12 @@ ROUGH Runthrough for Blog
    app/comp/new-review.js - Logic with saveReview
    app/routes/index.js - action saveReview in route
    app/tmp/index.hbs - Add new-review save code
+   
+   ONE TO MANY
+   app/models/rental.js  - Add DS.hasMany
+   app/models/review.js - Add DS.belongsTo
+   app/temp/rental.hbs - Move {{new-Review from index to here
+   app/comp/new-review.js - Add rental: this.get('rental') to the saveReview
+   
 
 
