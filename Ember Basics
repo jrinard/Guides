@@ -7,51 +7,21 @@ INSTALLING EMBER
     brew install watchman
     npm install -g ember-cli
     
-Setup from Clone
+Setup Project from Clone
     npm install
     bower install
     
-Setup from Scratch
+Setup Project from Scratch
     ember new project-name
     npm install
     bower install
     ember install ember-bootstrap
-    
-EMBER PROJECT
-    ember new project-name
-    cd project-name
-    ember serve or s or server    localhost:4200
-
-    Setup Firebase
-    
-   1. ember g route about       
-   2. app/router.js
-   3. app.templates/about.hbs
-   4. ember g model rental
-   6. ember g component rental-tile  - allows delete 
-   7. ember g component new-rental  - allows create
-   8. ember g component update-rental - allows update
-   9. ember g component rental-detail
-   
-   Dynamic Segment
-   ember g route rental
-    app/router.js
-                path etc
-    app/routes/rental.js
-                findRecord
-    app/templates/rental.hbs
-                {{model.owner}}'s {{model.type}} displays a single rental
-    ember g component rental-detail
-    app/templates/components/rental-detail.hbs
-    app/components/rental-detail.js
-    
-    
-    
+REMINDER
     Data down, actions up
     That means data like rentals names is pulled down from firebase while a button click action rises up from the components
 
 
-FireBase
+FIREBASE RULES
 Rules
 {
   "rules": {
@@ -60,32 +30,33 @@ Rules
   }
 }
 
-ROUGH Runthrough for Blog - used on https://github.com/jrinard/super-rentals-JS-Ember3
-    ember new project-name
-    npm install
-    bower install
-    ember install ember-bootstrap
-    ember install emberfire             - creates adapters folder 
+WORKFLOW for Blog - used on https://github.com/jrinard/super-rentals-JS-Ember3 and blog
+   ember new project-name
+   cd project-name
+   npm install
+   bower install
+   ember install ember-bootstrap
+   ember install emberfire             - creates adapters folder 
                 - setup rules
                 - import json
                 - add code to config.envir
-    application.hbs - template
-    ember g route index
+   application.hbs - template
+   ember g route index
                 - add model()
-    ember g model post
+   ember g model post
                 - models/post.js
    SHOW POST             
-    ember g component post-tile
-        edit index to link to post-title
-        edit templates/components/post-tile.hbs
-        edit components/post-tile.js
+   ember g component post-tile
+   edit index to link to post-title
+   edit templates/components/post-tile.hbs
+   edit components/post-tile.js
         
-  ADD CREATE
-    ember g component new-post
-    temp/comp/new-post.hbs   - added form
-    comp/new-post.js   - savePost1
-    temp/index - added new-post savePost2
-    routes/index.js - savePost3
+   ADD CREATE POST
+   ember g component new-post
+   temp/comp/new-post.hbs   - added form
+   comp/new-post.js   - savePost1
+   temp/index - added new-post savePost2
+   routes/index.js - savePost3
     
    DETAIL POST ID MANAGEMENT
    ember g route post
@@ -112,7 +83,7 @@ ROUGH Runthrough for Blog - used on https://github.com/jrinard/super-rentals-JS-
    edit tmp/post.hbs - update-post
    routes/post.js - action update
    
-  
+   
    ONE TO MANY - COMMENTS - Done on Blog and Super-Rentals
    ember g model comment
    app/models/comment.js   - define attr
