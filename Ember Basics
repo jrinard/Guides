@@ -135,6 +135,7 @@ ROUGH Runthrough for Blog - used on https://github.com/jrinard/super-rentals-JS-
    app/tmp/comp/post-detail.hbs - add {{#each post.comments loop
    ember g component comment-tile
    app/temp/comp/comment-tile.hbs - add {{comment.author
+   Delete firebase because you now have new structure
    
    DELETE MODEL RELATIONSHIPS - Both Rental and Review
    app/temp/comp/review-tile.hbs - add delete button
