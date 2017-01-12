@@ -60,7 +60,7 @@ Rules
   }
 }
 
-ROUGH Runthrough for Blog
+ROUGH Runthrough for Blog - used on https://github.com/jrinard/super-rentals-JS-Ember3
     ember new project-name
     npm install
     bower install
@@ -132,5 +132,8 @@ ROUGH Runthrough for Blog
    app/temp/rental.hbs - Move {{new-Review from index to here   + add rental=model
    app/comp/new-review.js - Add rental: this.get('rental') to the saveReview
    app/routes/rental.js - add saveReview code from index route + add extra parts addObject
+   app/tmp/comp/rental-detail.hbs - add {{#each rental.reviews loop
+   ember g component review-tile
+   app/temp/comp/review-tile.hbs - {{review.rating
 
 
