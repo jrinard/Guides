@@ -113,7 +113,7 @@ ROUGH Runthrough for Blog - used on https://github.com/jrinard/super-rentals-JS-
    routes/post.js - action update
    
   
-   ONE TO MANY - COMMENTS - Done on Rentals
+   ONE TO MANY - COMMENTS - Done on Blog and Super-Rentals
    ember g model comment
    app/models/comment.js   - define attr
    app/routes/index.js  - Ember RSVP.hash
