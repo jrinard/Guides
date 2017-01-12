@@ -142,6 +142,7 @@ ROUGH Runthrough for Blog - used on https://github.com/jrinard/super-rentals-JS-
    app/temp/comp/rental-detail.hbs - add destroyReview="destroyReview" to loop
    app/comp/rental-detail.js - add destroyReview logic
    app/temp/rental.hbs - add destroyReview="destroyReview" to {{rental-detail
+   app/routes/rental.js - add destroyRental RSVP logic
    
 
 
