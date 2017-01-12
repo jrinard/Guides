@@ -134,6 +134,6 @@ ROUGH Runthrough for Blog - used on https://github.com/jrinard/super-rentals-JS-
    app/routes/rental.js - add saveReview code from index route + add extra parts addObject
    app/tmp/comp/rental-detail.hbs - add {{#each rental.reviews loop
    ember g component review-tile
-   app/temp/comp/review-tile.hbs - {{review.rating
+   app/temp/comp/review-tile.hbs - add {{review.author
 
 
