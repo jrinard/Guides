@@ -138,14 +138,15 @@ ROUGH Runthrough for Blog - used on https://github.com/jrinard/super-rentals-JS-
    Delete firebase because you now have new structure
    
    DELETE MODEL RELATIONSHIPS - Both Post and Comment
-   app/temp/comp/comment-tile.hbs - add delete button
-   app/comp/comment-tile.js - add actions delete
+   FrontComp -  app/temp/comp/comment-tile.hbs - add delete button
+   BackComp  - app/comp/comment-tile.js - add actions delete logic
    
-   app/temp/comp/post-detail.hbs - add destroyComment="destroyComment" to loop
-   app/comp/post-detail.js - add destroyReview logic
-   app/temp/post.hbs - add destroyComment="destroyComment" to {{post-detail
-   app/routes/post.js - add destroyComment logic
-   app/routes/post.js - Update destroyPost with RSVP
+   FrontTemp - app/temp/comp/post-detail.hbs - add destroyComment="destroyComment" to loop
+   BackTemp - app/comp/post-detail.js - add destroyComment logic
+   
+   FrontTemp - app/temp/post.hbs - add destroyComment="destroyComment" to {{post-detail
+   BackTemp - app/routes/post.js - add destroyComment logic
+   BackTemp -app/routes/post.js - Update destroyPost with RSVP
    
 
 
