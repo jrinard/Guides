@@ -129,8 +129,8 @@ ROUGH Runthrough for Blog
    ONE TO MANY
    app/models/rental.js  - Add DS.hasMany
    app/models/review.js - Add DS.belongsTo
-   app/temp/rental.hbs - Move {{new-Review from index to here
+   app/temp/rental.hbs - Move {{new-Review from index to here   + add rental=model
    app/comp/new-review.js - Add rental: this.get('rental') to the saveReview
-   
+   app/routes/rental.js - add saveReview code from index route + add extra parts addObject
 
 
