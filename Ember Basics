@@ -113,27 +113,27 @@ ROUGH Runthrough for Blog - used on https://github.com/jrinard/super-rentals-JS-
    routes/post.js - action update
    
   
-   ONE TO MANY - REVIEWS - Done on Rentals
-   ember g model review
-   app/models/review.js   - define attr
+   ONE TO MANY - COMMENTS - Done on Rentals
+   ember g model comment
+   app/models/comment.js   - define attr
    app/routes/index.js  - Ember RSVP.hash
-   app/templates/index.hbs - model.rentals and model.reviews - Important!
-   Seed Firebase with renals and reviews
+   app/templates/index.hbs - model.posts and model.comments - Important!
+   Seed Firebase with posts and comments
    
    CREATING A NEW REVIEW
-   app/tmp/comp/new-review.hbs - Form with saveReview
-   app/comp/new-review.js - Logic with saveReview
-   app/routes/index.js - action saveReview in route
-   app/tmp/index.hbs - Add new-review save code
+   app/tmp/comp/new-comment.hbs - Form with saveComment
+   app/comp/new-comment.js - Logic with saveComment
+   app/routes/index.js - action saveComment in route
+   app/tmp/index.hbs - Add new-comment save code
    
    ONE TO MANY
-   app/models/rental.js  - Add DS.hasMany
-   app/models/review.js - Add DS.belongsTo
-   app/temp/rental.hbs - Move {{new-Review from index to here   + add rental=model
-   app/comp/new-review.js - Add rental: this.get('rental') to the saveReview
-   app/routes/rental.js - add saveReview code from index route + add extra parts addObject
-   app/tmp/comp/rental-detail.hbs - add {{#each rental.reviews loop
-   ember g component review-tile
-   app/temp/comp/review-tile.hbs - add {{review.author
+   app/models/post.js  - Add DS.hasMany
+   app/models/comment.js - Add DS.belongsTo
+   app/temp/post.hbs - Move {{new-Comment from index to here   + add post=model
+   app/comp/new-comment.js - Add post: this.get('post') to the saveComment
+   app/routes/post.js - add saveComment code from index route + add extra parts addObject
+   app/tmp/comp/post-detail.hbs - add {{#each post.comments loop
+   ember g component comment-tile
+   app/temp/comp/comment-tile.hbs - add {{comment.author
 
 
