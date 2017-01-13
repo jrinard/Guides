@@ -78,9 +78,9 @@ WORKFLOW for Blog - used on https://github.com/jrinard/super-rentals-JS-Ember3 a
    
    UPDATE SINGLE POST
    ember g component update-post
-   edit comp/update-post - updatePostForm
-   edit comp/update-post - update
-   edit tmp/post.hbs - update-post
+   temp/comp/update-post - updatePostForm
+   comp/update-post - update
+   tmp/post.hbs - update-post
    routes/post.js - action update
    
    
@@ -92,10 +92,11 @@ WORKFLOW for Blog - used on https://github.com/jrinard/super-rentals-JS-Ember3 a
    Seed Firebase with posts and comments
    
    CREATING A NEW REVIEW
+   ember g component new-comment
    app/tmp/comp/new-comment.hbs - Form with saveComment
    app/comp/new-comment.js - Logic with saveComment
-   app/routes/index.js - action saveComment in route
-   app/tmp/index.hbs - Add new-comment save code
+   app/routes/index.js - action saveComment in route // refactored later
+   app/tmp/index.hbs - Add new-comment save code // refactored later
    
    ONE TO MANY
    app/models/post.js  - Add DS.hasMany
