@@ -95,13 +95,13 @@ WORKFLOW for Blog - used on https://github.com/jrinard/super-rentals-JS-Ember3 a
    ember g component new-comment
    app/tmp/comp/new-comment.hbs - Form with saveComment
    app/comp/new-comment.js - Logic with saveComment
-   app/routes/index.js - action saveComment in route // refactored later
-   app/tmp/index.hbs - Add new-comment save code // refactored later
+   app/routes/index.js - action saveComment in route // refactored later  - move
+   app/tmp/index.hbs - Add new-comment save code // refactored later - move
    
    ONE TO MANY
    app/models/post.js  - Add DS.hasMany
    app/models/comment.js - Add DS.belongsTo
-   app/temp/post.hbs - Move {{new-Comment from index to here   + add post=model
+   app/temp/post.hbs - Move {{new-Comment from index to here   + add post=model // moved here
    app/comp/new-comment.js - Add post: this.get('post') to the saveComment
    app/routes/post.js - add saveComment code from index route + add extra parts addObject
    app/tmp/comp/post-detail.hbs - add {{#each post.comments loop
