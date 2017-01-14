@@ -1,0 +1,6 @@
+Angular 2
+
+Install
+npm install typescript -g         - need node installed
+tsc -v
+apm install atom-typescript       -  atom package
