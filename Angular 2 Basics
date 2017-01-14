@@ -1,8 +1,9 @@
 Angular 2
 
-Install
+INSTALLING
 npm install typescript -g         - need node installed
 tsc -v
 apm install atom-typescript       -  atom package
 
+COMPILING
 tsc app.hello.ts - compiles a file ending in .ts
