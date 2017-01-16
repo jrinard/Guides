@@ -13,3 +13,9 @@ npm install
 bower install
 gulp build
 gulp serve
+
+
+WORKFLOW
+update app.component h1 tag
+edit app.component.ts
+
