@@ -7,3 +7,10 @@ apm install atom-typescript       -  atom package
 
 COMPILING
 tsc app.hello.ts - compiles a file ending in .ts
+
+
+FROM SKELETON
+bower init
+
+npm install
+bower install
