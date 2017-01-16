@@ -8,9 +8,8 @@ apm install atom-typescript       -  atom package
 COMPILING
 tsc app.hello.ts - compiles a file ending in .ts
 
-
-FROM SKELETON
-bower init
-
+STARTING FROM SKELETON
 npm install
 bower install
+gulp build
+gulp serve
