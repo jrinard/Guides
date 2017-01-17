@@ -15,7 +15,8 @@ gulp build
 gulp serve
 
 
-WORKFLOW
-update app.component h1 tag
-edit app.component.ts
+FLOW
+main.ts
+app.module.ts
+app.component.ts
 
