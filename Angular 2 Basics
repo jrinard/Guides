@@ -14,9 +14,16 @@ bower install
 gulp build
 gulp serve
 
-
-FLOW
+WORKFLOW
 main.ts
-app.module.ts
-app.component.ts
+app.module.ts - Root Module + Module Decorator ngModule + Class Declaration export
+app.component.ts - Root Component - Component Annotation @Component + Class Definition AppComponent
+task.model.ts - Class declaration constructor
+app.component.ts - add import task.model
+
+(Repeat root component 3 part structure to make individual components)
+task-list.component.ts - import comp and task.model + @comp annotation + class definition + Input and Output + Loop
+root.component.ts - add <task-list code back into root comp
+                  - add [property binding] and (event binding) for input and output call methods in app.comp
+
 
