@@ -21,9 +21,26 @@ app.component.ts - Root Component - Component Annotation @Component + Class Defi
 task.model.ts - Class declaration constructor
 app.component.ts - add import task.model
 
-(Repeat root component 3 part structure to make individual components)
-task-list.component.ts - import comp and task.model + @comp annotation + class definition + Input and Output + Loop
-root.component.ts - add <task-list code back into root comp
-                  - add [property binding] and (event binding) for input and output call methods in app.comp
+-------(Repeat root component 3 part structure to make individual components)
+
+task-list.component.ts - 3 part - import comp and task.model + @comp annotation + class definition 
+                       - Input childTasklist + Output editButtonSender
+                       - add *ngFor Loop
+root.component.ts - add <task-list code
+                  - add property binding [childTaskList] and event binding (editButtonSender) for input and output call methods
+                  
+new-task.comp.ts  - 3 parts - import + @comp annotation + export class definition 
+                  - template form + output with emitter
+                  - don't forget # template reference variable
+root.component.ts - add <new-task code
+                  - add (event binding) to catch output from new-task and call addTask
+                  - build addTask
+
+edit-task.comp.ts - 3 part - import + annotation + declaration
+                  - template form for childSelectedTask
+                  - Input childSelectedTask and Output doneButtonClickedSender
+root.component.ts - add <edit-task code
+                  - [childSelectTask to sent down to edit-task    (doneButtonClickedSender) to catch from edit-task
+                  - build methods editTask and finishedEditing
 
 
