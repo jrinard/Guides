@@ -1,1 +1,18 @@
 Angular 2 Extended
+
+INSTALLATION
+npm install -g angular-cli
+If error then brew upgrade node
+npm list -g typescript to see if it is installed. if not then npm install -g typescript
+
+
+NEWPROJECT
+ng new online-store
+
+
+
+
+
+
+
+
