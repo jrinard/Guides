@@ -23,15 +23,18 @@ ng g component welcome
       - remove extra onInit and constructor code
       - example  - ng g pipe pipe-name 
       - example ng g class class-name.model
-Create Routes Manually in app folder as app.routing.ts
+CREATE ROUTING     
+      - app.routing.ts - create file manually in app
       - import ModuleWithProviders + Routes, RouterModule
       - 3 parts import, const and export
-      
-WELCOME PAGE
+      app.module.ts - import "routing from" + add "routing" to imports
+     
+ROUTING TO WELCOME PAGE
 ng g component welcome
-      app.routing.ts - path + component
-      app.module.ts - import routing from + add routing to imports
-      app.component.html - add <router-outlet
+app.routing.ts - import WelcomeComponent from (May be auto generated)
+app.routing.ts - path + component: WelcomeComponent   - connects routing between welcome component and the app.component
+app.module.ts - add WelcomeComponent to import and declarations
+app.component.html - add <router-outlet
 
       
   
