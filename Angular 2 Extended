@@ -29,25 +29,27 @@ CREATE ROUTING
       - 3 parts import, const and export
       app.module.ts - import "routing from" + add "routing" to imports
      
-ROUTING TO WELCOME PAGE
+ROUTING TO WELCOME/HOME PAGE
 ng g component welcome
-app.routing.ts - import WelcomeComponent from (May be auto generated)
-app.routing.ts - path + component: WelcomeComponent   - connects routing between welcome component and the app.component
-app.module.ts - add WelcomeComponent to import and declarations
-app.component.html - add <router-outlet
-
-
-Create a component for the new route, if necessary.
-Import the new component into the router file.
-Define a new Route object in the router's appRoutes array.
-Create a way for users to navigate to the new route.
+welcome.comp.ts - remove constructor and ngOnInit + implements OnInit
+welcome.comp.html - add html code
+app.routing.ts - import { WelcomeComponent } from + path and component to appRoutes array
+      app.module.ts - add WelcomeComponent to import and declarations (May be auto)
+      app.comp.html - add <router-outlet
 
 ROUTING TO ABOUT
 ng g component about
 about.comp.ts - remove constructor and ngOnInit + implements OnInit
 about.comp.html - add html code
 app.routing.ts - add import { AboutComponent } from + path and component to appRoutes array
+app.comp.html - add <a routerLink="about"
 
+ROUTING TO MARKETPLACE
+ng g component marketplace
+marketplace.comp.ts - remove constructor and ngOnInit + implements OnInit
+marketplace.comp.html - add html code
+app.routing.ts - add import { MarketplaceComponent } from + path and component to appRoutes array
+app.comp.html - add <a routerLink="marketplace"
 
       
   
