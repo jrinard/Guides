@@ -36,6 +36,19 @@ app.routing.ts - path + component: WelcomeComponent   - connects routing between
 app.module.ts - add WelcomeComponent to import and declarations
 app.component.html - add <router-outlet
 
+
+Create a component for the new route, if necessary.
+Import the new component into the router file.
+Define a new Route object in the router's appRoutes array.
+Create a way for users to navigate to the new route.
+
+ROUTING TO ABOUT
+ng g component about
+about.comp.ts - remove constructor and ngOnInit + implements OnInit
+about.comp.html - add html code
+app.routing.ts - add import { AboutComponent } from + path and component to appRoutes array
+
+
       
   
 
