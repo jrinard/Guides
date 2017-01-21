@@ -34,8 +34,8 @@ ng g component welcome
 welcome.comp.ts - remove constructor and ngOnInit + implements OnInit
 welcome.comp.html - add html code
 app.routing.ts - import { WelcomeComponent } from + path and component to appRoutes array
-      app.module.ts - add WelcomeComponent to import and declarations (May be auto)
-      app.comp.html - add <router-outlet
+app.module.ts - add WelcomeComponent to import and declarations (May be auto)
+app.comp.html - add <router-outlet for homepage content
 
 ROUTING TO ABOUT
 ng g component about
