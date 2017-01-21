@@ -4,10 +4,14 @@ INSTALLATION
 npm install -g angular-cli
 If error then brew upgrade node
 npm list -g typescript to see if it is installed. if not then npm install -g typescript
+npm list -g bower   or  npm install bower -g
 
 
-NEWPROJECT
+NEW-PROJECT
 ng new online-store
+bower init    - add /bower_components to ignore
+bower install bootstrap --save     - for all front end dependencies
+      - angular-cli.json  under apsps/styles   add "../bower_components/bootstrap/dist/css/bootstrap.css"
 
 
 
