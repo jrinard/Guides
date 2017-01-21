@@ -18,6 +18,12 @@ ng serve
 ng lint - check for errors
 
 
+NEW PARTS
+ng g component welcome
+      - remove extra onInit and constructor code
+ng g pipe pipe-name - example
+ng g class class-name.model - example
+
 
 
 
