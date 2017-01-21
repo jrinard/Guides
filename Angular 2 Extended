@@ -7,11 +7,15 @@ npm list -g typescript to see if it is installed. if not then npm install -g typ
 npm list -g bower   or  npm install bower -g
 
 
-NEW-PROJECT
+NEW-PROJECT SETUP
 ng new online-store
 bower init    - add /bower_components to ignore
 bower install bootstrap --save     - for all front end dependencies
       - angular-cli.json  under apsps/styles   add "../bower_components/bootstrap/dist/css/bootstrap.css"
+      
+BUILDING AND SERVING
+ng serve
+ng lint - check for errors
 
 
 
