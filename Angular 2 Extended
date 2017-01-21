@@ -18,11 +18,19 @@ ng serve
 ng lint - check for errors
 
 
-NEW PARTS
+WORKFLOW
 ng g component welcome
       - remove extra onInit and constructor code
-ng g pipe pipe-name - example
-ng g class class-name.model - example
+      - example  - ng g pipe pipe-name 
+      - example ng g class class-name.model
+Create Routes Manually in app folder as app.routing.ts
+      - import ModuleWithProviders + Routes, RouterModule
+      
+WELCOME PAGE
+ng g component welcome
+      app.routing.ts - path + component
+      
+  
 
 
 
