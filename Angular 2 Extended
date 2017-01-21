@@ -25,10 +25,14 @@ ng g component welcome
       - example ng g class class-name.model
 Create Routes Manually in app folder as app.routing.ts
       - import ModuleWithProviders + Routes, RouterModule
+      - 3 parts import, const and export
       
 WELCOME PAGE
 ng g component welcome
       app.routing.ts - path + component
+      app.module.ts - import routing from + add routing to imports
+      app.component.html - add <router-outlet
+
       
   
 
