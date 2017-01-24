@@ -57,10 +57,15 @@ app.routing.ts - add import { MarketplaceComponent } from + path and component t
 app.comp.html - add <a routerLink="marketplace"
 
 ADDING A Model - ALBUM
-      
 ng g class album.model
 app/album.model.ts - add export class Albu, { constructor
 app/marketplace/marketplace.comp.ts - import album + albums object with values
+marketplace.comp.html - add ngfor to loop album info
+
+DYNAMIC ROUTING - DETAIL PAGE
+ng g component album-detail
+app.routing.ts - import AlbumDetailComponent + path/component
+marketplace.comp.html - (click)="goToDetailPage(album)"
 
 
 
