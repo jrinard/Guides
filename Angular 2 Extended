@@ -89,6 +89,10 @@ album.service.ts - getAlbumById
 album-detail.com.ts - albumToDisplay + add this.albumToDisplay to ngoninit
 album-detail.comp.html - add {{albumToDisplay.title
 
+Service allows data to any page.
+methods are defined inside service
+in page the details need to be you need 3 things. import service, provider, and onInit.
+
 
 
 
