@@ -66,6 +66,8 @@ DYNAMIC ROUTING - DETAIL PAGE
 ng g component album-detail
 app.routing.ts - import AlbumDetailComponent + path/component
 marketplace.comp.html - (click)="goToDetailPage(album)"
+marketplace.comp.ts - goToDetailPage function
+                    -  import Router + constructor(private router: Router
 
 
 
