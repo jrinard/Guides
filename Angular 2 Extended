@@ -68,7 +68,11 @@ app.routing.ts - import AlbumDetailComponent + path/component
 marketplace.comp.html - (click)="goToDetailPage(album)"
 marketplace.comp.ts - goToDetailPage function
                     -  import Router + constructor(private router: Router
-
+PASSING DATA T IN SO COMPONENT CAN USE IT - SINGLE ID for Routing
+album-detail.comp.ts - import ActivatedRoute, Params + Location + Album
+album-detail.comp.html - {{albumId
+album-detail.comp.ts - add constructor(private route: ActivatedRoute + Location
+album-detail.comp.ts - add this.route.params,forEach  => this.albumId....id
 
 
 
