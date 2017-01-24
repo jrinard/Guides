@@ -93,6 +93,19 @@ Service allows data to any page.
 methods are defined inside service
 in page the details need to be you need 3 things. import service, provider, and onInit.
 
-
+FIREBASE
+npm install angularfire2 firebase --save
+tsconfig.json - "types": [ "firebase" ]
+create app/api-keys - add api key info from firebase
+.gitignore - /src/app/api-keys.ts 
+app.module.ts - import masterFirebaseConfig + AngularFireModule + export const firebaseConfig = {
+              - AngularFireModule.initializeApp(firebaseConfig) to imports in NgModule
+add to rules
+{
+  "rules": {
+    ".read": "true",
+    ".write": "true"
+  }
+}
 
 
