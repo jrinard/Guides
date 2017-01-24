@@ -108,4 +108,12 @@ add to rules
   }
 }
 
+import json to firebase
+album-service.ts - import {AngularFire + albums: FirebaseListObservable<any[]>;
+                  - add private angularFire: AngularFire to constructor + this.albums = angularFire.database.list('albums');
+                  - update getAlbums() with return this.albums;
+ marketplace-com.ts - change albums: Album[] to albums: FirebaseListObservable<any[]>; 
+                    - import { AngularFire, FirebaseListObservable } from 'angularfire2';
+ 
+
 
