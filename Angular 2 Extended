@@ -129,3 +129,11 @@ album.service.ts - add addAlbum and push to auto add to database
 commented out getAlbumById code
 admin.comp.ts - add this.albumService.addAlbum(newAlbum);
 
+FINDING AND RETRIEVING FIREBASE ENTRIES
+marketplace.comp.ts - change id to $key + remove Album type from clickedalbum parameter
+album-service.ts - refactor getAlbumById - return this.angularFire.database.object('/albums/' + albumId);
+album-detail.comp.ts - import { FirebaseObjectObservable
+                     - change albumId to string
+                     - albumToDisplay: FirebaseObjectObservable<Album>;
+                     - remove parseInt from forEach
+album-detail.comp.html - add async?
