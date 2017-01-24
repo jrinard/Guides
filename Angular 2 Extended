@@ -114,6 +114,18 @@ album-service.ts - import {AngularFire + albums: FirebaseListObservable<any[]>;
                   - update getAlbums() with return this.albums;
  marketplace-com.ts - change albums: Album[] to albums: FirebaseListObservable<any[]>; 
                     - import { AngularFire, FirebaseListObservable } from 'angularfire2';
- 
-
+ SAVING DATA 
+ ng g component admin
+ app.routing.ts import AdminComp + path/component
+ app.comp.html - add routerLink="admin"
+ admin.comp.html - add new form + button (click) submitForm
+ admin.comp.ts - add submitForm + import { Album } from './../album.model';
+ album.model.ts - remove id from constructor
+ admin.comp.ts - add 
+      import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
+      import { AlbumService } from '../album.service';
+      add albumservice to provider and constructor
+album.service.ts - add addAlbum and push to auto add to database
+commented out getAlbumById code
+admin.comp.ts - add this.albumService.addAlbum(newAlbum);
 
