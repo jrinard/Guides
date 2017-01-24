@@ -85,6 +85,10 @@ album.service.ts - import Injectable from + ALBUMS from
 marketplace-comp.ts - import AlbumService + private albumService: AlbumService + providers: [AlbumService]
                     - import OnInit + implements OnInit + ngOnInit() { this.albums = this.albumService.getAlbums(); 
 album-detail.comp.ts - import AlbumService + providers [Alb + privatealbum in constructor
+album.service.ts - getAlbumById
+album-detail.com.ts - albumToDisplay + add this.albumToDisplay to ngoninit
+album-detail.comp.html - add {{albumToDisplay.title
+
 
 
 
