@@ -56,8 +56,11 @@ marketplace.comp.html - add html code
 app.routing.ts - add import { MarketplaceComponent } from + path and component to appRoutes array
 app.comp.html - add <a routerLink="marketplace"
 
+ADDING A Model - ALBUM
       
-  
+ng g class album.model
+app/album.model.ts - add export class Albu, { constructor
+app/marketplace/marketplace.comp.ts - import album + albums object with values
 
 
 
