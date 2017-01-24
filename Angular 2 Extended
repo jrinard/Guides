@@ -12,6 +12,11 @@ ng new online-store
 bower init    - add /bower_components to ignore
 bower install bootstrap --save     - for all front end dependencies
       - angular-cli.json  under apsps/styles   add "../bower_components/bootstrap/dist/css/bootstrap.css"
+          
+SETUP FROM CLONE
+npm install -g angular-cli (only at school)
+npm install
+bower install
       
 BUILDING AND SERVING
 ng serve
