@@ -80,7 +80,10 @@ create mock-albums.ts - add import Album + ALBUMS aray of albums from marketplac
                       - Change beginning of array to export const ALBUMS: Album[]
 marketplace.comp.ts - add albums: Album[]; to constructor
 ng g service album.service
-album.service.ts - import Injectable from + ALBUMS from                  
+album.service.ts - import Injectable from + ALBUMS from
+                 - getAlbums()
+marketplace-comp.ts - import AlbumService + private albumService: AlbumService + providers: [AlbumService]
+                    - import OnInit + implements OnInit + ngOnInit() { this.albums = this.albumService.getAlbums(); 
 
 
 
