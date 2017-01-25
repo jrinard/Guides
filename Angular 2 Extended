@@ -165,6 +165,17 @@ edit-lbum.comp.ts - add beginDeletingAlbum method
 album.service.ts - add deleteAlbum method
 
 
+PIPE FILTEr
+ng g pipe artist - auto puts ArtistPipe in app.module + ng declarations
+artist.pipe.ts  -  import { Pipe, PipeTransform } + import { Album }
+                - export   implements PipeTransform
+                - @Pipe name, pure
+                - transform + loop logic
+marketplace.comp.html - | artist in *ngFor
+                      - <select> options
+                      - (change)="onChange($event.target.value)" added to select
+marketplace.com.ts    - filterByArtist: string = "allArtists";
+                      -   onChange(optionFromMenu) method
 
 
 
