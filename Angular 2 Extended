@@ -17,6 +17,7 @@ SETUP FROM CLONE
 npm install -g angular-cli (only at school)
 npm install
 bower install
+apm install atom-typescript
       
 BUILDING AND SERVING
 ng serve
