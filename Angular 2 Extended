@@ -97,7 +97,7 @@ in page the details need to be you need 3 things. import service, provider, and 
 FIREBASE
 npm install angularfire2 firebase --save
 tsconfig.json - "types": [ "firebase" ]
-create app/api-keys - add api key info from firebase
+create app/api-keys.ts - add api key info from firebase
 .gitignore - /src/app/api-keys.ts 
 app.module.ts - import masterFirebaseConfig + AngularFireModule + export const firebaseConfig = {
               - AngularFireModule.initializeApp(firebaseConfig) to imports in NgModule
@@ -110,7 +110,7 @@ add to rules
 }
 
 import json to firebase
-album-service.ts - import {AngularFire + albums: FirebaseListObservable<any[]>;
+album-service.ts - import { AngularFire, FirebaseListObservable + albums: FirebaseListObservable<any[]>;
                   - add private angularFire: AngularFire to constructor + this.albums = angularFire.database.list('albums');
                   - update getAlbums() with return this.albums;
  marketplace-com.ts - change albums: Album[] to albums: FirebaseListObservable<any[]>; 
@@ -122,10 +122,9 @@ album-service.ts - import {AngularFire + albums: FirebaseListObservable<any[]>;
  admin.comp.html - add new form + button (click) submitForm
  admin.comp.ts - add submitForm + import { Album } from './../album.model';
  album.model.ts - remove id from constructor
- admin.comp.ts - add 
-      import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
-      import { AlbumService } from '../album.service';
-      add albumservice to provider and constructor
+ admin.comp.ts  - import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
+                - import { AlbumService } from '../album.service';
+                - add AlbumService to providers and constructor
 album.service.ts - add addAlbum and push to auto add to database
 commented out getAlbumById code
 admin.comp.ts - add this.albumService.addAlbum(newAlbum);
