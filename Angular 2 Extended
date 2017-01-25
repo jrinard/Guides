@@ -146,7 +146,16 @@ admin.comp.html - <app-marketplace></app-marketplace>
 marketplace.comp.ts - add console.log(this.router.url); inside ngoninit  did not work
                     - add currentRoute: string = this.router.url;
 marketplace.comp.html - add <div *ngIf="currentRoute === '/admin'">  + {{album.description}} +  <app-edit-album></app-edit-album>
-
+edit-album.html - add edit album form with ngModel
+edit-album.comp.ts - import comp,input,oninit, album +   @Input() selectedAlbum; in EditAlbumComponent
+marketplace.comp.html - <app-edit-album [selectedAlbum]="album"
+marketplace-component.html - move (click)="goToDetailPage(album) from div to h3
+edit-album.comp.ts     - import { AlbumService
+                       - providers: [AlbumService]
+                       - private albumService: AlbumService
+album.service.ts - add   updateAlbum(localUpdatedAlbum) method
+edit-album.comp.html - add button click beginUpdatingAlbum
+edit-album.comp.ts - add beginUpdatingAlbum
 
 
 
