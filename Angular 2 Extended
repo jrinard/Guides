@@ -124,7 +124,7 @@ album-service.ts - import { AngularFire, FirebaseListObservable + albums: Fireba
  album.model.ts - remove id from constructor
  admin.comp.ts  - import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
                 - import { AlbumService } from '../album.service';
-                - add AlbumService to providers and constructor
+                - add AlbumService to providers + constructor(private albumService: AlbumService)
 album.service.ts - add addAlbum and push to auto add to database
 commented out getAlbumById code
 admin.comp.ts - add this.albumService.addAlbum(newAlbum);
