@@ -158,5 +158,16 @@ edit-album.comp.html - add button click beginUpdatingAlbum
 edit-album.comp.ts - add beginUpdatingAlbum
 
 
+DELETING ENTRIES
+edit-album.comp.html - add <button (click)="beginDeletingAlbum(selectedAlbum)">Delete</button>
+edit-lbum.comp.ts - add beginDeletingAlbum method
+      Note -  Make sure Service import and providers and constructor AlbumService exists
+album.service.ts - add deleteAlbum method
+
+
+
+
+
+
 
 
