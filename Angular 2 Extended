@@ -65,17 +65,17 @@ marketplace.comp.html - add ngfor to loop album info
 
 -- GO TO FIREBASE
 
-DYNAMIC ROUTING - DETAIL PAGE
-ng g component album-detail
-app.routing.ts - import AlbumDetailComponent + path/component
-marketplace.comp.html - (click)="goToDetailPage(album)"
-marketplace.comp.ts - goToDetailPage function
+            DYNAMIC ROUTING - DETAIL PAGE
+            ng g component album-detail
+            app.routing.ts - import AlbumDetailComponent + path/component
+            marketplace.comp.html - (click)="goToDetailPage(album)"
+            marketplace.comp.ts - goToDetailPage function
                     -  import Router + constructor(private router: Router
-PASSING DATA T IN SO COMPONENT CAN USE IT - SINGLE ID for Routing
-album-detail.comp.ts - import ActivatedRoute, Params + Location + Album
-album-detail.comp.html - {{albumId
-album-detail.comp.ts - add constructor(private route: ActivatedRoute + Location
-album-detail.comp.ts - add this.route.params,forEach  => this.albumId....id
+            PASSING DATA T IN SO COMPONENT CAN USE IT - SINGLE ID for Routing
+            album-detail.comp.ts - import ActivatedRoute, Params + Location + Album
+            album-detail.comp.html - {{albumId
+            album-detail.comp.ts - add constructor(private route: ActivatedRoute + Location
+            album-detail.comp.ts - add this.route.params,forEach  => this.albumId....id
 
 DEPENDENCY INJECTION - SERVICE - INJECTOR - PROVIDERS
 injector is responsible to provide service to component car driving person that does something
@@ -112,6 +112,7 @@ add to rules
 }
 
 import json to firebase
+--GO TO DEPENDENCY INJECTION
 album-service.ts - import { AngularFire, FirebaseListObservable + albums: FirebaseListObservable<any[]>;
                   - add private angularFire: AngularFire to constructor + this.albums = angularFire.database.list('albums');
                   - update getAlbums() with return this.albums;
@@ -167,7 +168,7 @@ edit-lbum.comp.ts - add beginDeletingAlbum method
 album.service.ts - add deleteAlbum method
 
 
-PIPE FILTEr
+PIPE FILTE
 ng g pipe artist - auto puts ArtistPipe in app.module + ng declarations
 artist.pipe.ts  -  import { Pipe, PipeTransform } + import { Album }
                 - export   implements PipeTransform
