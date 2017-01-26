@@ -10,8 +10,8 @@ npm list -g bower   or  npm install bower -g
 NEW-PROJECT SETUP
 ng new online-store
 bower init    - add /bower_components to ignore
-bower install bootstrap --save     - for all front end dependencies
-      - angular-cli.json  under apsps/styles   add "../bower_components/bootstrap/dist/css/bootstrap.css"
+bower install bootstrap --save   
+      - angular-cli.json  under apps/styles   add "../bower_components/bootstrap/dist/css/bootstrap.css"
           
 SETUP FROM CLONE
 npm install -g angular-cli (only at school)
@@ -33,7 +33,7 @@ CREATE ROUTING
       - app.routing.ts - create file manually in app
       - import ModuleWithProviders + Routes, RouterModule
       - 3 parts import, const and export
-      app.module.ts - import "routing from" + add "routing" to imports
+      app.module.ts - import { routing } from './app.routing'; + add "routing" to imports
      
 ROUTING TO WELCOME/HOME PAGE
 ng g component welcome
