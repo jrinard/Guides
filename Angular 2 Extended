@@ -30,10 +30,10 @@ ng g component welcome
       - example  - ng g pipe pipe-name 
       - example ng g class class-name.model
 CREATE ROUTING     
-      - app.routing.ts - create file manually in app
-      - import ModuleWithProviders + Routes, RouterModule
-      - 3 parts import, const and export
-      app.module.ts - import { routing } from './app.routing'; + add "routing" to imports
+app.routing.ts - create file manually in app
+               - import ModuleWithProviders + Routes, RouterModule
+               - 3 parts import, const and export
+app.module.ts - import { routing } from './app.routing'; + add "routing" to imports
      
 ROUTING TO WELCOME/HOME PAGE
 ng g component welcome
@@ -52,7 +52,7 @@ app.comp.html - add <a routerLink="about"
 
 ROUTING TO MARKETPLACE
 ng g component marketplace
-marketplace.comp.ts - remove constructor and ngOnInit + implements OnInit
+marketplace.comp.ts - remove constructor and ngOnInit + implements OnInit - LEAVE
 marketplace.comp.html - add html code
 app.routing.ts - add import { MarketplaceComponent } from + path and component to appRoutes array
 app.comp.html - add <a routerLink="marketplace"
@@ -62,6 +62,8 @@ ng g class album.model
 app/album.model.ts - add export class Albu, { constructor
 app/marketplace/marketplace.comp.ts - import album + albums object with values
 marketplace.comp.html - add ngfor to loop album info
+
+-- GO TO FIREBASE
 
 DYNAMIC ROUTING - DETAIL PAGE
 ng g component album-detail
