@@ -145,7 +145,7 @@ edit-album.comp.ts     - import { AlbumService
                        - providers: [AlbumService]
                        - private albumService: AlbumService in constructor
 album.service.ts - add method updateAlbum(localUpdatedAlbum)
-edit-album.comp.html - add button click beginUpdatingAlbum
+edit-album.comp.html - (click)="beginUpdatingThisAlbum(selectedAlbum)
 edit-album.comp.ts - add beginUpdatingAlbum
 
 
