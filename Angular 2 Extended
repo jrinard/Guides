@@ -138,20 +138,20 @@ admin.comp.html - <app-marketplace></app-marketplace>
 marketplace.comp.ts - add currentRoute: string = this.router.url;
 marketplace.comp.html - add <div *ngIf="currentRoute === '/admin'">  + {{album.description}} +  <app-edit-album></app-edit-album>
 edit-album.html - add edit album form with ngModel
-edit-album.comp.ts - import comp,input,oninit, album +   @Input() selectedAlbum; in EditAlbumComponent
+edit-album.comp.ts - import comp,input,oninit, album +   @Input() selectedAlbum;
 marketplace.comp.html - <app-edit-album [selectedAlbum]="album"
 marketplace-comp.html - move (click)="goToDetailPage(album) from div to h3
 edit-album.comp.ts     - import { AlbumService
                        - providers: [AlbumService]
-                       - private albumService: AlbumService
-album.service.ts - add   updateAlbum(localUpdatedAlbum) method
+                       - private albumService: AlbumService in constructor
+album.service.ts - add method updateAlbum(localUpdatedAlbum)
 edit-album.comp.html - add button click beginUpdatingAlbum
 edit-album.comp.ts - add beginUpdatingAlbum
 
 
 DELETING ENTRIES
 edit-album.comp.html - add <button (click)="beginDeletingAlbum(selectedAlbum)">Delete</button>
-edit-lbum.comp.ts - add beginDeletingAlbum method
+edit-album.comp.ts - add beginDeletingAlbum method
       Note -  Make sure Service import and providers and constructor AlbumService exists
 album.service.ts - add deleteAlbum method
 
