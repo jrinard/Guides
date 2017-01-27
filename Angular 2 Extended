@@ -3,9 +3,8 @@ Angular 2 Extended
 INSTALLATION
 npm install -g angular-cli
 If error then brew upgrade node
-npm list -g typescript to see if it is installed. if not then npm install -g typescript
-npm list -g bower   or  npm install bower -g
-
+npm install -g typescript    - npm list -g typescript - check if installed
+npm install bower -g     -    npm list -g bower - check if installed
 
 NEW-PROJECT SETUP
 ng new online-store
