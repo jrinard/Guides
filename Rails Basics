@@ -45,7 +45,7 @@ rake db:migrate
 rake db:test:prepare   - will create a schema to reflect your final database
                        - create migrations to modify it. or rollback?
                        
-UNIT TESTING
+MODEL
 create spec/models/list_spec.rb - add require 'rails_helper' etc
 create app/models/list.rb - add class List < ActiveRecord::Base etc
 
@@ -65,6 +65,15 @@ UPDATE and DESTROY
    list=List.first - assigns the first item in the list to var list
    list.update(name: "NEW-NAME")
    list.destroy
+   
+ROUTES
+config/routes.rb - add resources :lists  - sets up 7 restful routes   - rake routes to see
+
+CONTROLLER
+
+
+
+
           
        
 
