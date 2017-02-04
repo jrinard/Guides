@@ -42,4 +42,16 @@ rake db:create
 rails g migration create_lists - in main terminal  (rails is substituted for rake)
 db/migrate/202124124 - add table details to migration file
 rake db:migrate
+rake db:test:prepare   - will create a schema to reflect your final database
+                       - create migrations to modify it. or rollback?
+                       
+UNIT TESTING
+create spec/models/list_spec.rb - add require 'rails_helper' etc
+create app/models/list.rb - add class List < ActiveRecord::Base etc
+
+
+
+
+
+
            
