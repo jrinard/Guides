@@ -70,7 +70,7 @@ ROUTES
 config/routes.rb - add resources :lists  - sets up 7 restful routes   - rake routes to see
 
 CONTROLLER
-
+app/controllers/lists_controller.rb -  class ListsController etc
 
 
 
