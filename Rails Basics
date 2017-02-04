@@ -10,3 +10,7 @@ NEW PROJECT
 rails new your_app_name    - after test override
 bundle  - bundle install - bundle exec install?
 rails generate rspec:install
+spec/rails_heler.rb - code block - Shoulda::Matchers.configure do |config|
+           
+           
+           dropdb database_nam
