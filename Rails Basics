@@ -53,6 +53,10 @@ RAILS CONSOLE
 rails console or rails c
 exit - exit console
 
+STARTING SERVER
+rails server
+
+
 NEW and SAVE
   example - list=List.new
           - list.name="Homework"
@@ -74,7 +78,6 @@ app/controllers/lists_controller.rb -  class ListsController etc
 
 VIEWS
 app/views/lists/index.html.erb  - create file in lists  - add code <% @lists.each do |list| %>
-
 
 
           
