@@ -50,16 +50,20 @@ create spec/models/list_spec.rb - add require 'rails_helper' etc
 create app/models/list.rb - add class List < ActiveRecord::Base etc
 
 RAILS CONSOLE
-NEW and SAVE
 rails console or rails c
+
+NEW and SAVE
   example - list=List.new
           - list.name="Homework"
           - list.save
 CREATE - new and save at the same time
           - List.create(name: "Halloween Party")
 VIEW ALL - List.all     - extra commands find, where, first, last
-UPDATE and DESTROY
 
+UPDATE and DESTROY
+   list=List.first - assigns the first item in the list to var list
+   list.update(name: "NEW-NAME")
+   list.destroy
           
        
 
