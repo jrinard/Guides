@@ -43,7 +43,7 @@ rails g migration create_lists - in main terminal  (rails is substituted for rak
 db/migrate/202124124 - add table details to migration file
 rake db:migrate
 rake db:test:prepare   - will create a schema to reflect your final database
-                       - create migrations to modify it. or rollback?
+                       - create migrations to modify it. or db:rollback
                        
 MODEL
 create spec/models/list_spec.rb - add require 'rails_helper' etc
@@ -71,6 +71,9 @@ config/routes.rb - add resources :lists  - sets up 7 restful routes   - rake rou
 
 CONTROLLER
 app/controllers/lists_controller.rb -  class ListsController etc
+
+VIEWS
+app/views/lists/index.html.erb  - create file in lists  - add code <% @lists.each do |list| %>
 
 
 
