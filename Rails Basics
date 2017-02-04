@@ -84,9 +84,18 @@ app/views/lists/show.html.erb - <%= @list.name
 CREATE LIST
 app/contr/lists_controller.rb - def new @ list etc
 app/contr/lists_controller.rb - def create and private def list_params
-app/views/lists/new.html.erb - <%= form_for @list do etc  
+app/views/lists/new.html.erb - <%= form_for @list do etc  REFACTORED to partial <%= render "form" %>
 app/views/lists/new.html.erb - <% @list.errors
 app/views/lists/index.html.erb - <%= link_to "New List", new_list_path %>
+
+UPDATE, PARTIALS AND DELETE
+app/contr/lists_controller.rb - def edit 
+app/views/lists/edit.html.erb - create file then add <%= form_for code with errors loop REFACTORED to partial <%= render "form" %>
+app/contr/lits_controller.rb - def update
+
+PARTIALS FOR ERRORS AND FORM
+app/views/layouts/_errors.html.erb - <% if object.errors etc
+app/views/lists/_forms.html.erb - <%= render "layouts/errors etc
 
 
 
