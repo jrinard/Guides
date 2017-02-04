@@ -92,6 +92,7 @@ UPDATE
 app/contr/lists_controller.rb - def edit 
 app/views/lists/edit.html.erb - create file then add <%= form_for code REFACTORED to partial <%= render "form" %>
 app/contr/lits_controller.rb - def update
+app/view/lists/show.html.erb - <p><%= link_to "Edit", edit_list_path(@list) %></p>
 
 PARTIALS FOR ERRORS AND FORM
 app/views/layouts/_errors.html.erb - <% if object.errors etc
