@@ -1,31 +1,31 @@
 DATABASE BASIC OVERVIEW
   psql to start psql server - auto at home - postgres
   CREATE DATABASE: to_do;
-  DROP DATABASE test_database; - first \c to default database
+  DROP DATABASE to_do; - first \c to default database
   \l to list 
   \c to_do;   connect
   \d to
   \q to quit
  
-  
-  CREATE TABLE contacts (name varchar, age int, birthday timestamp);
-  ALTER TABLE contacts ADD family boolean;
-  ALTER TABLE contacts DROP family;
-  ALTER TABLE contacts ADD id serial PRIMARY KEY;
-  INSERT INTO contacts (name, age, birthday) VALUES ('Wes', 43, '1969-05-01');
-  INSERT INTO contacts (name, age, birthday) VALUES ('Wes', 43, '1969-05-01') RETURNING id;
-  SELECT name FROM contacts;
-  SELECT name, birthday FROM contacts;
-  SELECT * FROM contacts;
-  SELECT * FROM contacts WHERE age >= 18;
-  SELECT * FROM contacts WHERE age BETWEEN 13 AND 17;
-  SELECT * FROM contacts WHERE name LIKE 'We%';
-  SELECT * FROM contacts WHERE NOT age >= 18;
-  UPDATE contacts SET name = 'Wes Anderson' WHERE id = 1;
-  DELETE FROM contacts WHERE id = 1;
+  REMINDER
+      CREATE TABLE contacts (name varchar, age int, birthday timestamp);
+      ALTER TABLE contacts ADD family boolean;
+      ALTER TABLE contacts DROP family;
+      ALTER TABLE contacts ADD id serial PRIMARY KEY;
+      INSERT INTO contacts (name, age, birthday) VALUES ('Wes', 43, '1969-05-01');
+      INSERT INTO contacts (name, age, birthday) VALUES ('Wes', 43, '1969-05-01') RETURNING id;
+      SELECT name FROM contacts;
+      SELECT name, birthday FROM contacts;
+      SELECT * FROM contacts;
+      SELECT * FROM contacts WHERE age >= 18;
+      SELECT * FROM contacts WHERE age BETWEEN 13 AND 17;
+      SELECT * FROM contacts WHERE name LIKE 'We%';
+      SELECT * FROM contacts WHERE NOT age >= 18;
+      UPDATE contacts SET name = 'Wes Anderson' WHERE id = 1;
+      DELETE FROM contacts WHERE id = 1;
 
 
-INSTALL
+INSTALL RAILS
 gem install rails
 rails new to_do -d postgresql -T    - tells Rails to use Postgres for the database, and -T tells it not to install its testing tools - by default, it uses a library called test-unit, whereas we use RSpec
 .railsrc in your home directory     -   -d postgresql -T   - makes not installing testing tools default
@@ -35,6 +35,11 @@ rails new your_app_name    - after test override
 bundle  - bundle install - bundle exec install?
 rails generate rspec:install
 spec/rails_heler.rb - code block - Shoulda::Matchers.configure do |config|
+
+DATABASE
+config/database.yml - confirm it has the databases we want built
+rake db:create
+rails g migration create_lists - in main terminal  (rails is substituted for rake)
+db/migrate/202124124 - add table details to migration file
+rake db:migrate
            
-           
-           dropdb database_nam
