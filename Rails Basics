@@ -51,6 +51,7 @@ create app/models/list.rb - add class List < ActiveRecord::Base etc
 
 RAILS CONSOLE
 rails console or rails c
+exit - exit console
 
 NEW and SAVE
   example - list=List.new
