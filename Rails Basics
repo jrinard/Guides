@@ -111,9 +111,12 @@ spec/models/task_spec.rb - create file and describe Task do
 app/models/list.rb - has_many:tasks
 spec/models/list_spec.rb - it { should have_many :tasks }
 
-Routing for TASKS
+ROUTES for TASKS
 config/routes.rb - do resources : tasks  - (Nested inside list and dependent on list existing) rake routes to see routes
-
+VIEWS for TASKS
+app/views/lists/show.html.erb - display all task descriptions if they exist. Ability to create, edit and delete new task
+CONTROLLER for TASKS
+app/contr/tasks_controller.rb - class TasksController def new
 
 
 
