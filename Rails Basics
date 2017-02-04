@@ -102,7 +102,7 @@ DELETE
 app/views/lists/show.html.erb - add <%= link_to "Delete"
 app/contr/lists_controller.rb - def destroy
  
-MULTIPLE TASKS PER LIST
+MULTIPLE TASKS PER LIST - TASK MODEL
 rails g migration create_tasks 
 db/migrate/124214_create_tasks.rb - create_table :tasks code
 rake db:migrate db:test:prepare - changes reflected in schema
