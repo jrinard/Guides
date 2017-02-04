@@ -82,10 +82,11 @@ app/controllers/lists_controller.rb - def show @ list...params [:id]  etc
 app/views/lists/show.html.erb - <%= @list.name
 
 CREATE LIST
-app/controllers/lists_controller.rb - def new @ list etc
-app/views/lists/new.html.erb - <%= form_for @list do etc        
-       
-
+app/contr/lists_controller.rb - def new @ list etc
+app/contr/lists_controller.rb - def create and private def list_params
+app/views/lists/new.html.erb - <%= form_for @list do etc  
+app/views/lists/new.html.erb - <% @list.errors
+app/views/lists/index.html.erb - <%= link_to "New List", new_list_path %>
 
 
 
