@@ -95,7 +95,7 @@ app/contr/lits_controller.rb - def update
 
 PARTIALS FOR ERRORS AND FORM
 app/views/layouts/_errors.html.erb - <% if object.errors etc
-app/views/lists/_forms.html.erb - <%= render "layouts/errors etc
+app/views/lists/_forms.html.erb - <%= render "layouts/errors etc - notice its in lists folder
 
 DELETE
 app/views/lists/show.html.erb - add <%= link_to "Delete"
