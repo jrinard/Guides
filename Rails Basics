@@ -111,6 +111,9 @@ spec/models/task_spec.rb - create file and describe Task do
 app/models/list.rb - has_many:tasks
 spec/models/list_spec.rb - it { should have_many :tasks }
 
+Routing for TASKS
+config/routes.rb - do resources : tasks  - (Nested inside list and dependent on list existing) rake routes to see routes
+
 
 
 
