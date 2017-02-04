@@ -5,5 +5,8 @@ INSTALL
 gem install rails
 rails new to_do -d postgresql -T    - tells Rails to use Postgres for the database, and -T tells it not to install its testing tools - by default, it uses a library called test-unit, whereas we use RSpec
 .railsrc in your home directory     -   -d postgresql -T   - makes not installing testing tools default
-rails new your_app_name    - after test override
 
+NEW PROJECT
+rails new your_app_name    - after test override
+bundle  - bundle install - bundle exec install?
+rails generate rspec:install
