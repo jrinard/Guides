@@ -106,5 +106,15 @@ MULTIPLE TASKS PER LIST
 rails g migration create_tasks 
 db/migrate/124214_create_tasks.rb - create_table :tasks code
 rake db:migrate db:test:prepare - changes reflected in schema
+app/models/task.rb - belongs_to :list
+spec/models/task_spec.rb - create file and describe Task do
+app/models/list.rb - has_many:tasks
+spec/models/list_spec.rb - it { should have_many :tasks }
+
+
+
+
+
+
 
            
