@@ -120,6 +120,7 @@ app/contr/tasks_controller.rb - class TasksController def new
 PARTIAL
 app/views/tasks/_form.html.erb - partial form for task - passing in list and task
 app/views/tasks/new.html.erb - new task view with partial tag
+app/controllers/tasks_controller.rb - Refactor to def create + private def task_params
 
 
 
