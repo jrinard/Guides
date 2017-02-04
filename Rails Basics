@@ -1,4 +1,28 @@
-
+DATABASE BASIC OVERVIEW
+  psql to start psql server - auto at home - postgres
+  CREATE DATABASE: to_do;
+  DROP DATABASE test_database; - first \c to default database
+  \l to list 
+  \c to_do;   connect
+  \d to
+  \q to quit
+ 
+  
+  CREATE TABLE contacts (name varchar, age int, birthday timestamp);
+  ALTER TABLE contacts ADD family boolean;
+  ALTER TABLE contacts DROP family;
+  ALTER TABLE contacts ADD id serial PRIMARY KEY;
+  INSERT INTO contacts (name, age, birthday) VALUES ('Wes', 43, '1969-05-01');
+  INSERT INTO contacts (name, age, birthday) VALUES ('Wes', 43, '1969-05-01') RETURNING id;
+  SELECT name FROM contacts;
+  SELECT name, birthday FROM contacts;
+  SELECT * FROM contacts;
+  SELECT * FROM contacts WHERE age >= 18;
+  SELECT * FROM contacts WHERE age BETWEEN 13 AND 17;
+  SELECT * FROM contacts WHERE name LIKE 'We%';
+  SELECT * FROM contacts WHERE NOT age >= 18;
+  UPDATE contacts SET name = 'Wes Anderson' WHERE id = 1;
+  DELETE FROM contacts WHERE id = 1;
 
 
 INSTALL
