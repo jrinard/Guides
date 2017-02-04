@@ -80,7 +80,10 @@ app/views/lists/index.html.erb  - create file in lists  - add code <% @lists.eac
 SPECIFIC LIST
 app/controllers/lists_controller.rb - def show @ list...params [:id]  etc
 app/views/lists/show.html.erb - <%= @list.name
-          
+
+CREATE LIST
+app/controllers/lists_controller.rb - def new @ list etc
+app/views/lists/new.html.erb - <%= form_for @list do etc        
        
 
 
