@@ -73,13 +73,13 @@ UPDATE and DESTROY
 ROUTES
 config/routes.rb - add resources :lists  - sets up 7 restful routes   - rake routes to see
 
-CONTROLLER
-app/controllers/lists_controller.rb -  class ListsController etc
-
-VIEWS
+LISTS CONTROLLER
+app/controllers/lists_controller.rb -  create overall class ListsController etc
 app/views/lists/index.html.erb  - create file in lists  - add code <% @lists.each do |list| %>
 
-
+SPECIFIC LIST
+app/controllers/lists_controller.rb - def show @ list...params [:id]  etc
+app/views/lists/show.html.erb
           
        
 
