@@ -117,7 +117,9 @@ VIEWS for TASKS
 app/views/lists/show.html.erb - display all task descriptions if they exist. Ability to create, edit and delete new task
 CONTROLLER for TASKS
 app/contr/tasks_controller.rb - class TasksController def new
-
+PARTIAL
+app/views/tasks/_form.html.erb - partial form for task - passing in list and task
+app/views/tasks/new.html.erb - new task view with partial tag
 
 
 
