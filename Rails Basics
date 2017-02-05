@@ -111,20 +111,17 @@ spec/models/task_spec.rb - create file and describe Task do
 app/models/list.rb - has_many:tasks
 spec/models/list_spec.rb - it { should have_many :tasks }
 
-TASKS  ROUTES
+TASKS  
 config/routes.rb - do resources : tasks  - (Nested inside list and dependent on list existing) rake routes to see routes
-
-VIEWS for TASKS
 app/views/lists/show.html.erb - display all task descriptions if they exist. Ability to create, edit and delete new task
-
-CONTROLLER for TASKS
 app/contr/tasks_controller.rb - class TasksController def new
 
-PARTIAL
+PARTIAL for TASKS
 app/views/tasks/_form.html.erb - partial form for task - passing in list and task
 app/views/tasks/new.html.erb - new task view with partial tag
 app/controllers/tasks_controller.rb - Refactor to def create + private def task_params
 
+EDIT, DELETE
 app/contr/tasks_controller.rb - def new, def create, def edit, def update, def destroy, private
                                - @task - Task.find(params[:id])
 app/views/tasks/edit.html.erb - <h1> edit task + partial link to _form
