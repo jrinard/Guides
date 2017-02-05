@@ -125,6 +125,9 @@ app/views/tasks/_form.html.erb - partial form for task - passing in list and tas
 app/views/tasks/new.html.erb - new task view with partial tag
 app/controllers/tasks_controller.rb - Refactor to def create + private def task_params
 
+app/contr/tasks_controller.rb - def new, def create, def edit, def update, def destroy, private
+                               - @task - Task.find(params[:id])
+app/views/tasks/edit.html.erb - <h1> edit task + partial link to _form
 
 
 
