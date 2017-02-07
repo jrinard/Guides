@@ -1,3 +1,6 @@
+
+
+
 DATABASE BASIC OVERVIEW
   psql to start psql server - auto at home - postgres
   CREATE DATABASE: to_do;
@@ -25,6 +28,17 @@ DATABASE BASIC OVERVIEW
       DELETE FROM contacts WHERE id = 1;
 
 
+      RAILS CONSOLE
+     rails console or rails c
+      exit - exit console
+
+      STARTING SERVER
+      rails server
+
+START FROM CLONE
+bundle install
+rails s
+
 INSTALL RAILS
 gem install rails
 rails new to_do -d postgresql -T    - tells Rails to use Postgres for the database, and -T tells it not to install its testing tools - by default, it uses a library called test-unit, whereas we use RSpec
@@ -49,12 +63,6 @@ MODEL
 create spec/models/list_spec.rb - add require 'rails_helper' etc
 create app/models/list.rb - add class List < ActiveRecord::Base etc
 
-RAILS CONSOLE
-rails console or rails c
-exit - exit console
-
-STARTING SERVER
-rails server
 
 
 NEW and SAVE
@@ -135,5 +143,15 @@ Dynamic Title
 app/views/lists/show.html.erb - <% content_for(:title, "List | To Do") %>
 app/views/layouts/application.html.erb - <title><%= yield(:title) %></title>
 
+FLASH MESSAGES
+app/views/layouts/application.html.erb - <%= flash[:alert] %> + <%= flash[:notice] %>
+app/controllers/lists_controller.rb -  flash[:notice] = "List successfully added!"
+
+IMAGES
+<%= image_tag "rails.png" %>
+
+BOOTSTRAP SETUP
+gemfile - @import "bootstrap-sprockets"; + @import "bootstrap"; - bundle install
+rename application.css to .scss - @import "bootstrap-sprockets"; + @import "bootstrap";
 
            
