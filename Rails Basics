@@ -67,8 +67,7 @@ MODEL
 create spec/models/list_spec.rb - add require 'rails_helper' etc
 create app/models/list.rb - add class List < ActiveRecord::Base etc
 
-
-------- EXAMPLE
+------- EXAMPLE IN PSQL
 NEW and SAVE
   example - list=List.new
           - list.name="Homework"
@@ -81,7 +80,6 @@ UPDATE and DESTROY
    list=List.first - assigns the first item in the list to var list
    list.update(name: "NEW-NAME")
    list.destroy
-   
 -----------
    
 ROUTES
