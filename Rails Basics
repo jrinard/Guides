@@ -127,7 +127,13 @@ app/contr/tasks_controller.rb - def new, def create, def edit, def update, def d
 app/views/tasks/edit.html.erb - <h1> edit task + partial link to _form
 
 INTEGRATION TESTING
+gemfile - gem 'capybara'
+require 'capybara/rails'   - after require 'rspec/rails'
+spec/features/add_list_pages_spec.rb
 
+Dynamic Title
+app/views/lists/show.html.erb - <% content_for(:title, "List | To Do") %>
+app/views/layouts/application.html.erb - <title><%= yield(:title) %></title>
 
 
            
