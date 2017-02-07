@@ -1,5 +1,8 @@
 
-
+INSTALL RAILS
+gem install rails
+rails new to_do -d postgresql -T    - tells Rails to use Postgres for the database, and -T tells it not to install its testing tools - by default, it uses a library called test-unit, whereas we use RSpec
+.railsrc in your home directory     -   -d postgresql -T   - makes not installing testing tools default
 
 DATABASE BASIC OVERVIEW
   psql to start psql server - auto at home - postgres
@@ -27,24 +30,16 @@ DATABASE BASIC OVERVIEW
       UPDATE contacts SET name = 'Wes Anderson' WHERE id = 1;
       DELETE FROM contacts WHERE id = 1;
 
-
       RAILS CONSOLE
      rails console or rails c
       exit - exit console
 
-      STARTING SERVER
-      rails server
 
 START FROM CLONE
 bundle install
 rails s
 
-INSTALL RAILS
-gem install rails
-rails new to_do -d postgresql -T    - tells Rails to use Postgres for the database, and -T tells it not to install its testing tools - by default, it uses a library called test-unit, whereas we use RSpec
-.railsrc in your home directory     -   -d postgresql -T   - makes not installing testing tools default
-
-NEW PROJECT
+START NEW PROJECT
 postgres (at school)
 rails new your_app_name    or     rails new to_do -d postgresql -T
     gems + gemfile - gem 'capybara'
@@ -62,6 +57,9 @@ db/migrate/202124124 - add table details to migration file
 rake db:migrate
 rake db:test:prepare   - will create a schema to reflect your final database
                        - create migrations to modify it. or db:rollback
+                       
+STARTING SERVER
+rails server
                        
 MODEL
 create spec/models/list_spec.rb - add require 'rails_helper' etc
