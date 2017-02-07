@@ -126,6 +126,7 @@ app/contr/tasks_controller.rb - def new, def create, def edit, def update, def d
                                - @task - Task.find(params[:id])
 app/views/tasks/edit.html.erb - <h1> edit task + partial link to _form
 
+INTEGRATION TESTING
 
 
 
