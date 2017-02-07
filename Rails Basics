@@ -46,6 +46,9 @@ rails new to_do -d postgresql -T    - tells Rails to use Postgres for the databa
 
 NEW PROJECT
 rails new your_app_name    - after test override
+    gemfile - gem 'capybara'
+    require 'capybara/rails'   - after require 'rspec/rails'
+    spec/features/add_list_pages_spec.rb
 bundle  - bundle install - bundle exec install?
 rails generate rspec:install
 spec/rails_heler.rb - code block - Shoulda::Matchers.configure do |config|
