@@ -10,7 +10,7 @@ DATABASE BASIC OVERVIEW
   \d to
   \q to quit
  
-  REMINDER
+  REMINDER DATABASE
       CREATE TABLE contacts (name varchar, age int, birthday timestamp);
       ALTER TABLE contacts ADD family boolean;
       ALTER TABLE contacts DROP family;
@@ -45,18 +45,18 @@ rails new to_do -d postgresql -T    - tells Rails to use Postgres for the databa
 .railsrc in your home directory     -   -d postgresql -T   - makes not installing testing tools default
 
 NEW PROJECT
-rails new your_app_name    - after test override
-    gemfile - gem 'capybara'
+postgres (at school)
+rails new your_app_name    or     rails new to_do -d postgresql -T
+    gems + gemfile - gem 'capybara'
     require 'capybara/rails'   - after require 'rspec/rails'
-          spec/features/add_list_pages_spec.rb
 bundle  - bundle install - bundle exec install?
-rails generate rspec:install
-spec/rails_heler.rb - code block - Shoulda::Matchers.configure do |config|
+rails g rspec:install
+spec/rails_helper.rb - code block - Shoulda::Matchers.configure do |config|
 
 DATABASE
 postgres needs to be running
 config/database.yml - confirm it has the databases we want built
-rake db:create
+rake db:create in terminal
 rails g migration create_lists - in main terminal  (rails is substituted for rake)
 db/migrate/202124124 - add table details to migration file
 rake db:migrate
@@ -68,7 +68,7 @@ create spec/models/list_spec.rb - add require 'rails_helper' etc
 create app/models/list.rb - add class List < ActiveRecord::Base etc
 
 
-
+------- EXAMPLE
 NEW and SAVE
   example - list=List.new
           - list.name="Homework"
@@ -81,6 +81,8 @@ UPDATE and DESTROY
    list=List.first - assigns the first item in the list to var list
    list.update(name: "NEW-NAME")
    list.destroy
+   
+-----------
    
 ROUTES
 config/routes.rb - add resources :lists  - sets up 7 restful routes   - rake routes to see
@@ -125,7 +127,7 @@ spec/models/list_spec.rb - it { should have_many :tasks }
 
 TASKS  
 config/routes.rb - do resources : tasks  - (Nested inside list and dependent on list existing) rake routes to see routes
-app/views/lists/show.html.erb - display all task descriptions if they exist. Ability to create, edit and delete new task
+app/views/lists/show.html.erb - <% display all task descriptions if they exist. Ability to create, edit and delete new task
 app/contr/tasks_controller.rb - class TasksController def new
 
 PARTIAL for TASKS
