@@ -54,6 +54,7 @@ rails generate rspec:install
 spec/rails_heler.rb - code block - Shoulda::Matchers.configure do |config|
 
 DATABASE
+postgres needs to be running
 config/database.yml - confirm it has the databases we want built
 rake db:create
 rails g migration create_lists - in main terminal  (rails is substituted for rake)
