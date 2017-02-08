@@ -123,13 +123,14 @@ spec/models/list_spec.rb - it { should have_many :tasks }
 
 TASKS  
 config/routes.rb - do resources : tasks  - (Nested inside list and dependent on list existing) rake routes to see routes
-app/views/lists/show.html.erb - <% display all task descriptions if they exist. Ability to create, edit and delete new task
 app/contr/tasks_controller.rb - class TasksController def new
+app/views/lists/show.html.erb - !! <% display all task any? loop.  links to create, edit and delete new task
+
 
 PARTIAL for TASKS
 app/views/tasks/_form.html.erb - partial form for task - passing in list and task
 app/views/tasks/new.html.erb - new task view with partial tag
-app/controllers/tasks_controller.rb - Refactor to def create + private def task_params
+app/contr/tasks_controller.rb - Refactor to def create + private def task_params
 
 EDIT, DELETE
 app/contr/tasks_controller.rb - def new, def create, def edit, def update, def destroy, private
@@ -154,6 +155,9 @@ IMAGES
 
 BOOTSTRAP SETUP
 gemfile - @import "bootstrap-sprockets"; + @import "bootstrap"; - bundle install
-rename application.css to .scss - @import "bootstrap-sprockets"; + @import "bootstrap";
+rename application.css to .scss - @import "bootstrap-sprockets"; + @import "bootstrap
+
+ROUTE TO INDEX
+routes.rb
 
            
