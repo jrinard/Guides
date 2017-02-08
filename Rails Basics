@@ -84,6 +84,7 @@ ROUTES
 config/routes.rb - add resources :lists  - sets up 7 restful routes   - rake routes to see
 
 LISTS CONTROLLER
+rails g controller lists index show edit new
 app/controllers/lists_controller.rb -  create overall class ListsController etc
 app/views/lists/index.html.erb  - create file in lists  - add code <% @lists.each do |list| %>
 
