@@ -1,0 +1,8 @@
+
+PaperClip gem for uploading images
+
+add gem 'paperclip'
+
+bundle install
+
+rails g migration AddPaperclipToPost
