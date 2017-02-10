@@ -1,8 +1,10 @@
 
-PaperClip gem for uploading images
+PaperClip gem for uploading images - https://richonrails.com/articles/getting-started-with-paperclip#introduction
+
+brew install imagemagick
 
 add gem 'paperclip'
 
 bundle install
 
-rails g migration AddPaperclipToPost
+rails g migration AddPaperclipToProduct
