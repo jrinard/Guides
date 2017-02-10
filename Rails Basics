@@ -42,11 +42,11 @@ rails s
 START NEW PROJECT
 postgres (at school)
 rails new your_app_name    or     rails new to_do -d postgresql -T
-    gems + gemfile - gem 'capybara'
-    require 'capybara/rails'   - after require 'rspec/rails'
-bundle  - bundle install - bundle exec install?
+gems + gemfile - gem 'capybara'
+bundle  - bundle install
 rails g rspec:install
 spec/rails_helper.rb - code block - Shoulda::Matchers.configure do |config|
+                     - require 'capybara/rails'   - after require 'rspec/rails'
 
 DATABASE
 postgres needs to be running
