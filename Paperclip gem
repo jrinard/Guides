@@ -1,4 +1,8 @@
 
+https://devcenter.heroku.com/articles/paperclip-s3
+
+
+
 PaperClip gem for uploading images - https://richonrails.com/articles/getting-started-with-paperclip#introduction
 
 brew install imagemagick
