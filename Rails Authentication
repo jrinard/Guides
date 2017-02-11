@@ -2,10 +2,22 @@
 https://nycda.com/blog/basic-user-authentication-model-in-rails-4/
 
 
-Create home route - get '/' => 'home#index'
 
-app/controllers - home_controller.rb - add class HomeController < ApplicationController
-                                          def index
-                                          end
-                                          end
+RAILS AUTHENTICATION
+https://www.codecademy.com/learn/rails-auth
+
+
+Gemfile - gem 'bcrypt', '~> 3.1.7'
+bundle install
+
+User Model
+app/models/user.rb - class User < ActiveRecord::Base 
+                      has_secure_password 
+                     end
+
+rails g migration create_users
+db/migrate/201etc -       t.string :first_name
+                          t.string :last_name
+                          t.string :email
+                          t.string :password_digest
 
