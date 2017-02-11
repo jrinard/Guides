@@ -1,17 +1,13 @@
 
-https://nycda.com/blog/basic-user-authentication-model-in-rails-4/
-
-
-
 RAILS AUTHENTICATION
 https://www.codecademy.com/learn/rails-auth
-
+github - Timbuk3
 
 Gemfile - gem 'bcrypt', '~> 3.1.7'
 bundle install
 
 
-MODEL
+----- MODEL
 app/models/user.rb - class User < ActiveRecord::Base 
                       has_secure_password 
                      end
@@ -23,10 +19,16 @@ db/migrate/201etc -       t.string :first_name
 rake db:migrate
 
 
-SIGNUP
+------ SIGNUP
 routes.rb - 
       get 'signup'  => 'users#new' 
       resources :users
+      
+app/models/user.rb -
+      class User < ApplicationRecord
+        has_secure_password  
+      end
+
 
 app/views/users/new.html.erb - form_for
     <%= form_for(@user) do |f| %>
@@ -63,7 +65,7 @@ exit
 localhost:3000/signup for test
 
 
-LOGIN
+------ LOGIN
 rails g controller Sessions - do this manually
 FILES MANUALLY
 app/controllers/sessons_controller.rb
@@ -90,11 +92,18 @@ controllers/sessions_controller.rb -
 routes.rb -
       get 'login' => 'sessions#new'
       post 'login' => 'sessions#create'
-  
+            
+views/sessions/new.html.erb - 
+       <%= form_for(:session, url: login_path) do |f| %>
+         <%= f.email_field :email, :placeholder => "Email" %>
+         <%= f.password_field :password, :placeholder => "Password" %>
+         <%= f.submit "Log in", class: "btn-submit" %>
+      <% end %>
+
 test with localhost:3000/login
 
 
-LOGOUT
+------ LOGOUT
 routes.rb -   delete 'logout' => 'sessions#destroy'
 
 controllers/sessions_controller.rb - 
@@ -105,7 +114,7 @@ controllers/sessions_controller.rb -
   
   
 
-LIMITING ACCESS TO SPECIFIC PAGES
+------ LIMITING ACCESS TO SPECIFIC PAGES
 app/controllers/application_controller.rb - 
       class ApplicationController < ActionController::Base
            protect_from_forgery with: :exception
@@ -135,5 +144,18 @@ app/views/layouts/application.html.erb -
              <li><%= link_to "Signup", 'signup' %></a></li> 
            </ul> 
           <% end %>
+          
+          
+----- HOME PAGE
+routes.rb
+    get '/' => 'home#index'
+controllers/home_controller.rb -   def index end
+
+views/home/index.html.erb - <h1>
+
+
+Extra Resource
+https://nycda.com/blog/basic-user-authentication-model-in-rails-4/
+
 
 
