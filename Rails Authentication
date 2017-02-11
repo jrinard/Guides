@@ -1,0 +1,11 @@
+
+https://nycda.com/blog/basic-user-authentication-model-in-rails-4/
+
+
+Create home route - get '/' => 'home#index'
+
+app/controllers - home_controller.rb - add class HomeController < ApplicationController
+                                          def index
+                                          end
+                                          end
+
