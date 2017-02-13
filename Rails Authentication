@@ -161,8 +161,37 @@ https://nycda.com/blog/basic-user-authentication-model-in-rails-4/
 --------- RAILS AUTHORIZATION PERMISSIONS - PHASE 2
 
 
+rake db:rollback or rake g migration add_roles - users need column  
+db/migrate/201etc - t.string :role
+rake db:migrate
 
+app/models/user.rb -    
+   def editor?
+     self.role == 'editor'
+   end
 
+   def admin?
+     self.role == 'admin'
+   end
+   
+ db/seeds.rb - 
+    mateo = User.create(first_name: 'Mateo', last_name: 'Lazo', email: 'mateo@email.com', password: 'Mateo1', password_confirmation: 'Mateo1', role: 'editor')
+    julian = User.create(first_name: 'Julian', last_name: 'Jones', email: 'julian@email.com', password: 'Julian1', password_confirmation: 'Julian1')
+    freida = User.create(first_name: 'Freida', last_name: 'Gray', email: 'freida@email.com', password: 'Freida1', password_confirmation: 'Freida1', role: 'admin')
+ rake db:seed
+
+app/controllers/application_controller.rb -
+    def require_editor
+     redirect_to '/' unless current_user.editor?
+    end
+    def require_admin
+     redirect_to '/' unless current_user.admin? 
+    end
+
+controllers/products_controller.rb
+    before_action :require_user, only: [:show, :edit, :update, :destroy]
+    before_action :require_editor, only: [:show, :edit] #only allow users with editor role to access the show and edit actions
+    before_action :require_admin, only: [:show, :edit, :destroy]
 
 
 
