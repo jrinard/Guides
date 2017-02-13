@@ -194,6 +194,17 @@ controllers/products_controller.rb
     before_action :require_admin, only: [:show, :edit, :destroy]
 
 
+app/views/products/show.html - showing edit link if user is an admin
+  <% if current_user && current_user.editor? %>   method to display an edit link only if a user is an editor
+     <%= link_to "Edit", edit_product_path(@recipe.id) %> 
+  <% end %>
 
+rails c - test if user is an admin
+    freida = User.find_by(email: 'freida@email.com') 
+    freida.admin?
 
+ app/views/products/show.html.erb - Showing Delete link only if user is an admin
+     <% if current_user && current_user.admin? %> 
+     <%= link_to "Delete", product_path(@product), method: "delete" %>
+    <% end %>
 
