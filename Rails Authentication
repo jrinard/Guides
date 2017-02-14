@@ -161,7 +161,7 @@ https://nycda.com/blog/basic-user-authentication-model-in-rails-4/
 --------- RAILS AUTHORIZATION PERMISSIONS - PHASE 2
 
 
-rake db:rollback or rake g migration add_roles - users need column  
+rake db:rollback or rails g migration add_roles - users need column  
 db/migrate/201etc - t.string :role
 rake db:migrate
 
