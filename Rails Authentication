@@ -1,4 +1,6 @@
 
+Second Tutorial on bottom used on stack overflow clone
+
 RAILS AUTHENTICATION - Phase 1
 https://www.codecademy.com/learn/rails-auth
 github - Timbuk3
@@ -207,4 +209,7 @@ rails c - test if user is an admin
      <% if current_user && current_user.admin? %> 
      <%= link_to "Delete", product_path(@product), method: "delete" %>
     <% end %>
+    
+    
+------ NEW AUTHENTICATION WITH BYCRYPT
 
