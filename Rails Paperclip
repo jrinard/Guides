@@ -1,14 +1,61 @@
+PAPERCLIP GEM
 
-https://devcenter.heroku.com/articles/paperclip-s3
+https://github.com/thoughtbot/paperclip
+http://www.peoplecancode.com/tutorials/users-avatars-uploading-images-using-paperclip
 
-
-
-PaperClip gem for uploading images - https://richonrails.com/articles/getting-started-with-paperclip#introduction
-
+INSTALL
 brew install imagemagick
 
-add gem 'paperclip'
-
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 bundle install
 
-rails g migration AddPaperclipToProduct
+
+MIGRATION
+rails g migration AddFilesToPhotos
+    class AddFilesToPhotos < ActiveRecord::Migration[5.0]
+      def change
+       add_attachment :photos, :imgfile
+      end
+    end
+  
+rake db:migrate
+
+
+MODELS - photo.rb
+has_attached_file :imgfile, styles: { medium: "300x300>", thumb: "100x100>" }, default_url: "/images/:style/missing.png"
+  validates_attachment_content_type :imgfile, content_type: /\Aimage\/.*\z/
+
+
+
+CONTROLLERS - photo_controller.rb
+
+    def create
+      @user = User.create( user_params )
+    end
+
+    private
+
+    def user_params
+     params.require(:user).permit(:avatar)
+    end
+    
+    
+ CONTROLLERS - application_controller.rb
+ class ApplicationController < ActionController::Base
+    # Prevent CSRF attacks by raising an exception.
+    # For APIs, you may want to use :null_session instead.
+    protect_from_forgery with: :exception
+    before_filter :configure_permitted_parameters, if: :devise_controller?
+
+    protected
+    def configure_permitted_parameters
+        devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:name, :email, :password) }
+        devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:name, :email, :password, :current_password, :is_female, :date_of_birth, :avatar) }
+    end
+end
+
+FORM
+<%= f.file_field :imgfile %>
+
+VIEW HELPER
+<%= image_tag @user.avatar.url %>
