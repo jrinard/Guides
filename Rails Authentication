@@ -213,3 +213,131 @@ rails c - test if user is an admin
     
 ------ NEW AUTHENTICATION WITH BYCRYPT
 
+https://nycda.com/blog/basic-user-authentication-model-in-rails-4/
+
+Gemfile -
+  gem 'bcrypt-ruby', '~> 3.1.5', require: "bcrypt"
+  bundle install
+  
+config/environments/test.rb -
+  config.eager_load = false
+
+controllers/application_controller.rb -
+  protect_from_forgery with: :exception
+  def current_user
+    @current_user ||= User.find(session[:user_id]) if session[:user_id] # Basically, if session[:user_id] is set, find the User with that id. The @current_user ||= part of the method will cache the current user inside of the @current_user instance variable so we don't have to make a database call each time the method is called.
+  end
+  helper_method :current_user
+  
+sessions_controller.rb -
+  def new
+    render :login
+  end
+  def create
+      #try to authenticate the user - if they authenticate successfully, an instance of the User model is returned
+    @user = User.authenticate(params[:email], params[:password])
+      #if an instance is returned and @user is not nil...
+    if @user
+      #let the user know they've been logged in with a flash message
+      flash[:notice] = "You've been logged in."
+      #THIS IS THE MOST IMPORTANT PART. Actually log the user in by storing their ID in the session hash with the [:user_id] key!
+      session[:user_id] = @user.id
+      #then redirect them to the homepage
+      redirect_to "/"
+    else
+      #whoops, either the user wasn't in the database or their password is incorrect, so let them know, then redirect them back to the log in page
+      flash[:alert] = "There was a problem logging you in."
+      redirect_to log_in_path
+    end
+  end
+    def destroy
+      session[:user_id] = nil
+      flash[:notice] = "You've been logged out successfully."
+      redirect_to "/"
+    end
+    
+ controllers/users_controller.rb - 
+  def login
+  end
+  def signup
+  end
+  def new
+    render :signup
+  end
+  def create
+    @user = User.new(user_params)
+    if @user.save
+      flash[:notice] = "Welcome to the site!"
+      redirect_to "/"
+    else
+      flash[:alert] = "There was a problem creating your account. Please try again."
+      redirect_to :back
+    end
+  end
+  private
+    def user_params
+      params.require(:user).permit(:email, :password, :password_confirmation)
+    end
+
+models/application_record.rb -
+  self.abstract_class = true
+  
+models/user.rb -
+    attr_accessor :password #What this means is that a new instance of User can be created with all of the data from our sign up form and we can store a password on this instance without having a database column back it.
+      validates_confirmation_of :password
+      before_save :encrypt_password
+      def encrypt_password
+        self.password_salt = BCrypt::Engine.generate_salt
+        self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)
+      end
+      def self.authenticate(email, password)
+        user = User.where(email: email).first
+       if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)
+         user
+       else
+         nil
+       end
+      end
+      
+ views/layouts/application.html.erb -
+ <% if current_user %>
+            <ul>
+              <li><%= current_user.email %></li>
+             <li><%= link_to "Log-out", log_out_path, method: "get" %></li>
+            </ul>
+          <% else %>
+           <ul>
+             <li><%= link_to "Log-in", log_in_path %></a></li>
+             <li><%= link_to "Signup", new_user_path %></a></li>
+           </ul>
+          <% end %>
+
+views/questions/index.html -
+    <% if current_user %>
+    <%= current_user.email %>
+    <% else %>
+      nobody logged in
+    <% end %>
+    
+views/sessions/login.html.erb -
+    <%=form_tag log_in_path do%>
+    <%=label_tag :email %>
+    <%=text_field_tag :email %>
+    <%=label_tag :password %>
+    <%=password_field_tag :password %>
+    <%=submit_tag "Log in" %>
+    <%end%>
+    
+views/users/signup.html.erb
+    <%= form_for User.new do |f| %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+    <%= f.submit "Sign Up" %>
+    <%end%>
+
+
+
