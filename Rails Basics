@@ -49,23 +49,22 @@ spec/rails_helper.rb - code block - Shoulda::Matchers.configure do |config|
                      - require 'capybara/rails'   - after require 'rspec/rails'
 
 DATABASE
-postgres needs to be running
-config/database.yml - confirm it has the databases we want built
-rake db:create in terminal
-rails g migration create_lists - in main terminal  (rails is substituted for rake)
+postgres running
+rake db:create
+rails g migration create_lists
 db/migrate/202124124 - add table details to migration file
 rake db:migrate
-rake db:test:prepare   - will create a schema to reflect your final database
-                       - create migrations to modify it. or db:rollback
+rake db:test:prepare   - create migrations to modify it. or db:rollback
                        
 STARTING SERVER
 rails server
                        
-MODEL
+MODELS
+create models/list.rb - add class List < ActiveRecord::Base etc
 create spec/models/list_spec.rb - add require 'rails_helper' etc
-create app/models/list.rb - add class List < ActiveRecord::Base etc
+More Models
 
-------- EXAMPLE IN PSQL
+------- EXAMPLE IN Rails Console
 NEW and SAVE
   example - list=List.new
           - list.name="Homework"
@@ -81,23 +80,23 @@ UPDATE and DESTROY
 -----------
    
 ROUTES
-config/routes.rb - add resources :lists  - sets up 7 restful routes   - rake routes to see
+config/routes.rb - add resources :lists -  rake routes to see
 
 LISTS CONTROLLER
 rails g controller lists index show edit new
-app/controllers/lists_controller.rb -  create overall class ListsController etc
-app/views/lists/index.html.erb  - create file in lists  - add code <% @lists.each do |list| %>
+controllers/lists_controller.rb -  defs
+views/lists/index.html.erb  - Loop <% @lists.each do |list| %>
 
 SPECIFIC LIST
-app/controllers/lists_controller.rb - def show @ list...params [:id]  etc
-app/views/lists/show.html.erb - <%= @list.name
+controllers/lists_controller.rb - def show
+views/lists/show.html.erb - <%= @list.name
 
 CREATE LIST
-app/contr/lists_controller.rb - def new @ list etc
-app/contr/lists_controller.rb - def create and private def list_params
-app/views/lists/new.html.erb - <%= form_for @list do etc  REFACTORED to partial <%= render "form" %>
-app/views/lists/new.html.erb - <% @list.errors
-app/views/lists/index.html.erb - <%= link_to "New List", new_list_path %>
+controllers/lists_controller.rb - def new
+controllers/lists_controller.rb - def create + private def list_params
+views/lists/new.html.erb - <%= form_for @list do etc  REFACTORED to partial <%= render "form" %>
+views/lists/new.html.erb - <% @list.errors
+views/lists/index.html.erb - <%= link_to "New List", new_list_path %>
 
 UPDATE
 app/contr/lists_controller.rb - def edit 
