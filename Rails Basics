@@ -65,18 +65,18 @@ create spec/models/list_spec.rb - add require 'rails_helper' etc
 More Models
 
 ------- EXAMPLE IN Rails Console
-NEW and SAVE
-  example - list=List.new
-          - list.name="Homework"
-          - list.save
-CREATE - new and save at the same time
-          - List.create(name: "Halloween Party")
-VIEW ALL - List.all     - extra commands find, where, first, last
+        NEW and SAVE
+          example - list=List.new
+                  - list.name="Homework"
+                 - list.save
+        CREATE - new and save at the same time
+                 - List.create(name: "Halloween Party")
+        VIEW ALL - List.all     - extra commands find, where, first, last
 
-UPDATE and DESTROY
-   list=List.first - assigns the first item in the list to var list
-   list.update(name: "NEW-NAME")
-   list.destroy
+        UPDATE and DESTROY
+           list=List.first - assigns the first item in the list to var list
+           list.update(name: "NEW-NAME")
+           list.destroy
 -----------
    
 ROUTES
@@ -92,50 +92,44 @@ controllers/lists_controller.rb - def show
 views/lists/show.html.erb - <%= @list.name
 
 CREATE LIST
-controllers/lists_controller.rb - def new
-controllers/lists_controller.rb - def create + private def list_params
-views/lists/new.html.erb - <%= form_for @list do etc  REFACTORED to partial <%= render "form" %>
-views/lists/new.html.erb - <% @list.errors
+controllers/lists_controller.rb - def new + def create + private def list_params
+views/lists/new.html.erb -  <%= render "form" %>
+views/lists/_form.html.erb - form
 views/lists/index.html.erb - <%= link_to "New List", new_list_path %>
 
 UPDATE
-app/contr/lists_controller.rb - def edit 
-app/views/lists/edit.html.erb - create file then add <%= form_for code REFACTORED to partial <%= render "form" %>
-app/contr/lits_controller.rb - def update
-app/view/lists/show.html.erb - <p><%= link_to "Edit", edit_list_path(@list) %></p>
+controllers/lists_controller.rb - def edit + def update
+views/lists/edit.html.erb -  <%= render "form" %>
+view/lists/show.html.erb -  <%= link_to "Edit", edit_list_path(@list) %>
 
 PARTIALS FOR ERRORS AND FORM
-app/views/layouts/_errors.html.erb - <% if object.errors etc
-app/views/lists/_forms.html.erb - <%= render "layouts/errors etc - notice its in lists folder
+views/layouts/_errors.html.erb - <% if object.errors etc
+views/lists/_forms.html.erb - <%= render "layouts/errors etc - notice its in lists folder
 
 DELETE
-app/views/lists/show.html.erb - add <%= link_to "Delete"
-app/contr/lists_controller.rb - def destroy
- 
-MULTIPLE TASKS PER LIST - TASK MODEL
-rails g migration create_tasks 
-db/migrate/124214_create_tasks.rb - create_table :tasks code
-rake db:migrate db:test:prepare - changes reflected in schema
-app/models/task.rb - belongs_to :list
-spec/models/task_spec.rb - create file and describe Task do
-app/models/list.rb - has_many:tasks
+contr/lists_controller.rb - def destroy
+views/lists/show.html.erb - <%= link_to "Delete"
+
+MULTIPLE TASKS PER LIST - TASK MODEL - ONE TO MANY
+rails g migration create_tasks - db/migrate/124214_create_tasks.rb - create_table :tasks 
+rake db:migrate db:test:prepare
+models/task.rb - belongs_to :list
+spec/models/task_spec.rb - describe Task do
+models/list.rb - has_many:tasks
 spec/models/list_spec.rb - it { should have_many :tasks }
 
 TASKS  
 config/routes.rb - do resources : tasks  - (Nested inside list and dependent on list existing) rake routes to see routes
-app/contr/tasks_controller.rb - class TasksController def new
-app/views/lists/show.html.erb - !! <% display all task any? loop.  links to create, edit and delete new task
+controllers/tasks_controller.rb - def new
+views/lists/show.html.erb - <% @lists.task.any? loop.  links to create, edit and delete new task
 
-
-PARTIAL for TASKS
-app/views/tasks/_form.html.erb - partial form for task - passing in list and task
-app/views/tasks/new.html.erb - new task view with partial tag
-app/contr/tasks_controller.rb - Refactor to def create + private def task_params
-
-EDIT, DELETE
-app/contr/tasks_controller.rb - def new, def create, def edit, def update, def destroy, private
-                               - @task - Task.find(params[:id])
-app/views/tasks/edit.html.erb - <h1> edit task + partial link to _form
+PARTIALS + CREATE, EDIT, DELETE
+views/tasks/_form.html.erb
+views/tasks/new.html.erb - <%= render 'form' %>
+controllers/tasks_controller.rb - def create + private def task_params
+controllers/tasks_controller.rb - def new, def create, def edit, def update, def destroy, private  - @task - Task.find(params[:id])
+app/views/lists/show.html.erb - link_to new task
+views/tasks/edit.html.erb - edit task + partial link to _form + Delete
 
 INTEGRATION TESTING
 gemfile - gem 'capybara'
@@ -143,12 +137,12 @@ require 'capybara/rails'   - after require 'rspec/rails'
 spec/features/add_list_pages_spec.rb
 
 Dynamic Title
-app/views/lists/show.html.erb - <% content_for(:title, "List | To Do") %>
-app/views/layouts/application.html.erb - <title><%= yield(:title) %></title>
+views/lists/show.html.erb - <% content_for(:title, "List | To Do") %>
+views/layouts/application.html.erb - <title><%= yield(:title) %></title>
 
 FLASH MESSAGES
-app/views/layouts/application.html.erb - <%= flash[:alert] %> + <%= flash[:notice] %>
-app/controllers/lists_controller.rb -  flash[:notice] = "List successfully added!"
+views/layouts/application.html.erb - <%= flash[:alert] %> + <%= flash[:notice] %>
+controllers/lists_controller.rb -  flash[:notice] = "List successfully added!"
 
 IMAGES
 <%= image_tag "rails.png" %>
@@ -158,6 +152,6 @@ gemfile - @import "bootstrap-sprockets"; + @import "bootstrap"; - bundle install
 rename application.css to .scss - @import "bootstrap-sprockets"; + @import "bootstrap
 
 ROUTE TO INDEX
-routes.rb
+root :to => '/'
 
            
