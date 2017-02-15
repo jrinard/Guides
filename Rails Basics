@@ -33,9 +33,11 @@ DATABASE BASIC OVERVIEW
       RAILS CONSOLE
      rails console or rails c
       exit - exit console
+______________________________________________________
 
 
 START FROM CLONE
+postgres (at school)
 bundle install
 rails s
 
@@ -64,7 +66,7 @@ create models/list.rb - add class List < ActiveRecord::Base etc
 create spec/models/list_spec.rb - add require 'rails_helper' etc
 More Models
 
-------- EXAMPLE IN Rails Console
+------- EXAMPLE CRUD IN RAILS CONSOLE
         NEW and SAVE
           example - list=List.new
                   - list.name="Homework"
