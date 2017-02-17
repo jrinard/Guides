@@ -278,9 +278,6 @@ sessions_controller.rb -
     def user_params
       params.require(:user).permit(:email, :password, :password_confirmation)
     end
-
-models/application_record.rb -
-  self.abstract_class = true
   
 models/user.rb -
     attr_accessor :password #What this means is that a new instance of User can be created with all of the data from our sign up form and we can store a password on this instance without having a database column back it.
@@ -338,6 +335,21 @@ views/users/signup.html.erb
     <%= f.password_field :password_confirmation %>
     <%= f.submit "Sign Up" %>
     <%end%>
+
+config/routes.rb
+    Rails.application.routes.draw do
+    root :to => 'sessions#new'
+    get "/log-in" => "sessions#new"
+    post "/log-in" => "sessions#create"
+    get "/log-out" => "sessions#destroy", as: :log_out #custom path
+
+    resources :users
+
+    resources :outfits do
+     # resources :comment
+    end
+
+    end
 
 
 
