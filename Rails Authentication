@@ -1,5 +1,5 @@
 
-Second Tutorial on bottom used on stack overflow clone
+Second Tutorial on BOTTOM used on stack overflow clone - so go to bottom
 
 RAILS AUTHENTICATION - Phase 1
 https://www.codecademy.com/learn/rails-auth
@@ -211,7 +211,7 @@ rails c - test if user is an admin
     <% end %>
     
     
------- NEW AUTHENTICATION WITH BYCRYPT
+------------ NEW AUTHENTICATION WITH BYCRYPT - best version used on stackoverflow clone
 
 https://nycda.com/blog/basic-user-authentication-model-in-rails-4/
 
