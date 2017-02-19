@@ -1,0 +1,37 @@
+Rails Ajax
+
+app/views/lists/show.html.erb
+    <p><%= link_to "Add a task", new_list_task_path(@list), id: "new_task_link", class: "btn btn-default", remote: true %></p>
+
+
+app/controllers/tasks_controllers.rb
+     def create
+       @list = List.find(params[:list_id])
+       @task = @list.tasks.new(task_params)
+       if @task.save
+         flash[:notice] = "Task successfully added!"
+         respond_to do |format|
+            format.html { redirect_to list_path(@task.list) }
+           format.js
+          end
+        else
+          render :new
+       end
+     end
+     
+ create.js.erb
+        $('form').remove();
+        $('#new_task_link').show();
+        $('ul p').remove();
+        $('#list_tasks').append('<li><%= @task.description %> | <%= link_to "Edit", edit_list_task_path(@list, @task), :class => "btn btn-default" %> | <%= link_to "Delete", list_task_path(@list, @task),
+                                 :data => {:confirm => "Are you sure?",
+                                 :method => "delete"},
+                                 :class => "btn btn-danger" %></li>')
+                                 
+  edit.js.erb
+        $('#edit_task_btn').hide().after('<%= j render("form") %>')
+        
+        
+ new.js.erb
+        $('#new_task_link').hide().after('<%= j render("form") %>')
+
