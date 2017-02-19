@@ -1,7 +1,8 @@
 Rails Ajax
 
 app/views/lists/show.html.erb
-    <p><%= link_to "Add a task", new_list_task_path(@list), id: "new_task_link", class: "btn btn-default", remote: true %></p>
+    add ID to edit -    , id: "edit_task_btn
+    add ID to new task - <%= ...... new_list_task_path(@list), id: "new_task_link", class: "btn btn-default", remote: true %>
 
 
 app/controllers/tasks_controllers.rb
