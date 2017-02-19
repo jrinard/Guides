@@ -1,5 +1,14 @@
 Rails Ajax
 
+4 parts you need to get.
+
+1. html link needs an ID + remote true for future js to hide
+2. controller needs format direction   in def create or wherever
+3. new.js.erb file needs to exist so route can go there. This file hides the new link and renders a form inline
+
+
+
+
 app/views/lists/show.html.erb
     add ID to ul - <ul id='list_tasks'>
     add ID to edit -    task), id: "edit_task_btn",:class => "btn btn-default", remote: true
