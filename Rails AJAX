@@ -5,6 +5,8 @@ app/views/lists/show.html.erb
     add ID to edit -    task), id: "edit_task_btn",:class => "btn btn-default", remote: true
     add ID to new task - <%= ...... new_list_task_path(@list), id: "new_task_link", class: "btn btn-default", remote: true %>
     
+tasks/_form -
+     <%= form_for [@list, @task], remote: true  do |f| %>
 
 
 app/controllers/tasks_controllers.rb
@@ -37,4 +39,6 @@ app/controllers/tasks_controllers.rb
         
  new.js.erb
         $('#new_task_link').hide().after('<%= j render("form") %>')
+        
+ 
 
