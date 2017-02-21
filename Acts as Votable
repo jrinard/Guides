@@ -1,0 +1,36 @@
+
+
+gem 'acts_as_votable', '~> 0.10.0'
+
+
+rails generate acts_as_votable:migration
+rake db:migrate
+
+Model
+class Post < ActiveRecord::Base
+  acts_as_votable
+end
+
+
+Controller Action - index or show
+
+    if params[:upvote]
+      @question = Question.find(params[:upvote])
+      @question.liked_by current_user
+    end
+    if params[:downvote]
+      @question = Question.find(params[:downvote])
+      @question.disliked_by current_user
+    end
+    
+    
+    
+    index.html.erb -
+        <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+        <%= link_to "Vote", :upvote => question.id %>
+        <span class="vote-number"><%= question.get_likes.size %></span>
+      
+      
+        <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+        <%= link_to "Vote", :downvote => question.id %>
+        <span class="vote-number"> <%= question.get_dislikes.size %></span>
