@@ -1,1 +1,19 @@
+Devise:
+- Gemfile Addition:
+  - gem 'devise'
+- bundle install (terminal)
+- rails g devise:install (terminal)
+- config/environments/development.rb addition:
+  - config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+- rails g devise user (migration file, editable)
+- rake db:migrate
+- ApplicationController addition:
+  - before_action :authenticate_user! (after protect_from_forgery with: :exception line)
+- Home page controller addition (example):
+  - skip_before_action :authenticate_user!, :only => [:index]
+- Add to application.html (above yield, in p tags with class notice, alert respectively(optional)):
+  - <%= notice %>
+  - <%= alert %>
+http://codepany.com/blog/rails-5-user-accounts-with-3-types-of-roles-devise-rails_admin-cancancan/
+http://guides.railsgirls.com/devise
 https://github.com/plataformatec/devise
