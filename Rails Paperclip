@@ -41,6 +41,7 @@ CONTROLLERS - photos_controller.rb
     
     
 FORM
+<%= form_for @question, authenticity_token: true, remote: true do |f| %>     -  tip may need [@user, @question] if there is relationship
 <%= f.file_field :imgfile %>
 
 VIEW HELPER
