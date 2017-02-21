@@ -10,7 +10,7 @@ Devise:
   
   
 - rails g devise user (migration file, editable)
-  rails generate migration create_users   (add custom columns in migration)
+  rails generate migration to add custom columns to user
 - rake db:migrate
 
 - ApplicationController addition:
