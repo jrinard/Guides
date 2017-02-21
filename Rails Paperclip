@@ -46,3 +46,5 @@ FORM
 
 VIEW HELPER
 <%= image_tag @user.avatar.url %>
+
+may need   @question = Question.new( :option_one => question_params[:option_one], :option_two => question_params[:option_two], :image_one => question_params[:image_one], :image_two => question_params[:image_two])
