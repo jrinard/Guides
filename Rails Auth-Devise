@@ -25,3 +25,29 @@ Devise:
 http://codepany.com/blog/rails-5-user-accounts-with-3-types-of-roles-devise-rails_admin-cancancan/
 http://guides.railsgirls.com/devise
 https://github.com/plataformatec/devise
+
+
+
+CUSTOM FIELDS
+
+rails generate devise:views   - will make a devise folder
+
+new.html.erb & edit.html.erb (registrations folders) signup and edit
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    
+App controller
+      before_action :configure_permitted_parameters, if: :devise_controller?
+
+protected
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up) do |user_params|
+      user_params.permit(:name, :email, :password, :password_confirmation)
+    end
+    devise_parameter_sanitizer.permit(:sign_in) do |user_params|
+      user_params.permit(:name, :email, :password)
+    end
+    devise_parameter_sanitizer.permit(:account_update) do |user_params|
+      user_params.permit(:name, :email, :current_password, :password, :password_confirmation)
+    end
+  end
