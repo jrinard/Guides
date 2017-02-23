@@ -152,6 +152,7 @@ IMAGES
 BOOTSTRAP SETUP
 gemfile - @import "bootstrap-sprockets"; + @import "bootstrap"; - bundle install
 rename application.css to .scss - @import "bootstrap-sprockets"; + @import "bootstrap
+application.js needs      = require bootstrap        for js
 
 ROUTE TO INDEX
 root :to => '/'
