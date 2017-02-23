@@ -29,7 +29,8 @@ https://github.com/plataformatec/devise
 
 TESTING
 rails-helper.rb
-  config.include Warden::Test::Helpers  or config.include Devise::Test::IntegrationHelpers, type: :feature
+  RSpec.configure do |config|
+   config.include Warden::Test::Helpers  or config.include Devise::Test::IntegrationHelpers, type: :feature
 
 
 CUSTOM FIELDS
