@@ -5,12 +5,11 @@ Devise:
   
 - rails g devise:install (terminal)
 
-- config/environments/development.rb addition:
+config/environments/development.rb addition:
   - config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
   
-  
 - rails g devise user (migration file, editable)
-  rails generate migration to add custom columns to user
+  For custom columns add them to migration or create another.    -   rails generate migration to_add_custom_columns_to_user
 - rake db:migrate
 
 - ApplicationController addition:
@@ -30,7 +29,7 @@ https://github.com/plataformatec/devise
 TESTING
 rails-helper.rb
   RSpec.configure do |config|
-   config.include Warden::Test::Helpers  or config.include Devise::Test::IntegrationHelpers, type: :feature
+   config.include Warden::Test::Helpers  or    config.include Devise::Test::IntegrationHelpers, type: :feature
 
 
 CUSTOM FIELDS
