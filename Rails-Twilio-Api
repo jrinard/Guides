@@ -44,3 +44,10 @@ response = RestClient::Request.new(
 
 parsed_response = JSON.parse(response)
 parsed_response['status']
+
+
+ get data from the messages key and turning it into an array called messages_data
+    messages_data = parsed_response['messages']
+
+take messages_data array and turning it into a new array of Message objects from our model
+    messages = messages_data.map { |data| Message.new(data) }
