@@ -100,13 +100,16 @@ message.rb
       end
   
  spec_helper.rb
-      VCR.configure do  |c|
-        c.cassette_library_dir = 'spec/cassettes'
-        c.hook_into :webmock
-        c.configure_rspec_metadata!
-      end
+        VCR.configure do |c|
+          c.cassette_library_dir = 'spec/cassettes'
+          c.hook_into :webmock
+          c.configure_rspec_metadata!
+          c.filter_sensitive_data('<pikachu>') { ENV['Twilio_Acc_Sid']}   #hides sensitive info in cassettes folder
+          c.filter_sensitive_data('<charmander>') { ENV['Twilio_Auth_Token']}
+        end
 
 SPEC
 describe Message, :vcr => true do
 
-
+HEROKU
+  heroku config:set TWILIO_ACCOUNT_SID=AC3e0af22b6b772460f352ba8c6586fbde
