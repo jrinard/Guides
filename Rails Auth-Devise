@@ -35,6 +35,8 @@ rails-helper.rb
 CUSTOM FIELDS
 
 rails generate devise:views   - will make a devise folder
+config/initializers/devise.rb - line 223
+              config.scoped_views = true
 
 new.html.erb & edit.html.erb (registrations folders) signup and edit
     <%= f.label :name %>
