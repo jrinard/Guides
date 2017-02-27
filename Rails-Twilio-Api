@@ -55,6 +55,8 @@ messages = messages_data.map { |data| Message.new(data) } - take messages_data a
 
 gem 'dotenv-rails' #for env auth
 
+
+DATABASE
 rails g migration create_messages
           create_table :messages do |t|
             t.string 'to'
@@ -62,7 +64,8 @@ rails g migration create_messages
             t.text 'body'
           end
 
-message.rb - model
+MODEL
+message.rb
             class Message < ActiveRecord::Base
               before_create :send_sms
 
@@ -89,9 +92,9 @@ message.rb - model
   Twilio_Auth_Token=#######
   
   
-  TESTING
+ TESTING
  Gems
-       group :test do
+      group :test do
         gem "vcr" #speeds up api testing
         gem "webmock" #speeds up api testing
       end
@@ -103,6 +106,7 @@ message.rb - model
         c.configure_rspec_metadata!
       end
 
+SPEC
 describe Message, :vcr => true do
 
 
