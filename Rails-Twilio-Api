@@ -103,6 +103,6 @@ message.rb - model
         c.configure_rspec_metadata!
       end
 
-
+describe Message, :vcr => true do
 
 
