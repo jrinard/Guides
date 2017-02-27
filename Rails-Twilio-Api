@@ -51,7 +51,9 @@ messages_data = parsed_response['messages']   - get data from the messages key a
 messages = messages_data.map { |data| Message.new(data) } - take messages_data array and turning it into a new array of Message objects from our model
 
 
---------------------- Practical use
+--------------------- PRACTICAL USE
+
+gem 'dotenv-rails' #for env auth
 
 rails g migration create_messages
           create_table :messages do |t|
