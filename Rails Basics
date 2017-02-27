@@ -150,9 +150,14 @@ IMAGES
 <%= image_tag "rails.png" %>
 
 BOOTSTRAP SETUP
-gemfile - @import "bootstrap-sprockets"; + @import "bootstrap"; - bundle install
-rename application.css to .scss - @import "bootstrap-sprockets"; + @import "bootstrap
-application.js needs      = require bootstrap        for js
+gemfile gem 'bootstrap-sass', '~> 3.3.6'    (Make sure the regular bootstrap is not there)
+rename application.css to .scss
+             @import "bootstrap-sprockets";
+             @import "bootstrap"; 
+application.js -     
+              //= require bootstrap-sprockets
+
+
 
 ROUTE TO INDEX
 root :to => '/'
