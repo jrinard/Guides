@@ -51,7 +51,37 @@ messages_data = parsed_response['messages']   - get data from the messages key a
 messages = messages_data.map { |data| Message.new(data) } - take messages_data array and turning it into a new array of Message objects from our model
 
 
-
+--------------------- Practical use
 
 rails g migration create_messages
+          create_table :messages do |t|
+            t.string 'to'
+            t.string 'from'
+            t.text 'body'
+          end
+
+message.rb - model
+          class Message < ActiveRecord::Base
+            before_create :send_sms
+
+          private
+            def send_sms
+              response = RestClient::Request.new(
+                :method => :post,
+                :url => 'https://api.twilio.com/2010-04-01/Accounts/AC92343d189fc553f58a92f9895da8ced5/Messages.json',
+                :user => ENV['Twilio_Acc_Sid'],
+                :password => ENV['Twilio_Auth_Token'],
+                :payload => { :Body => body,
+                              :From => from,
+                              :To => to}
+              ).execute
+            end
+          end
+          
+.env in top level
+  Twilio_Acc_Sid=#######
+  Twilio_Auth_Token=#######
+
+
+
 
