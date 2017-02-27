@@ -1,0 +1,16 @@
+gem 'rest-client', '>= 2.0'
+
+May need to "gem update --system"
+
+
+HTTP BASIC AUTH
+https://{ACSID}:{TOKEN}@api.twilio.com/2010-04-01/Accounts/{ASID}/Messages.json
+EXAMPLE CALL
+RestClient.post 'http://example.com/resource', {param1: 'one', nested: {param2: 'two'}}
+
+SPECIFIC CALL
+RestClient.post(
+'https://AC92343d189fc553f58a92f9895da8ced5:deea8aec73dd023526f404d2c72b79fe@api.twilio.com/2010-04-01/Accounts/AC92343d189fc553f58a92f9895da8ced5/Messages.json',
+:Body => 'hello world',
+:From => '2085955077',
+:To => '2083168338')
