@@ -27,8 +27,9 @@ RestClient::Request.new(
                 :To => '2083168338'}
 ).execute
 
-LONG WAY CONVERSION TO RUBY HASH   - done in irb
 
+
+LONG WAY CONVERSION TO RUBY HASH   - done in irb
 Spec_helper.rb
 require 'json'
 
@@ -43,11 +44,8 @@ response = RestClient::Request.new(
 ).execute
 
 parsed_response = JSON.parse(response)
-parsed_response['status']
+parsed_response['status'] qued is good
 
+messages_data = parsed_response['messages']   - get data from the messages key and turning it into an array called messages_data
 
- get data from the messages key and turning it into an array called messages_data
-    messages_data = parsed_response['messages']
-
-take messages_data array and turning it into a new array of Message objects from our model
-    messages = messages_data.map { |data| Message.new(data) }
+messages = messages_data.map { |data| Message.new(data) } - take messages_data array and turning it into a new array of Message objects from our model
