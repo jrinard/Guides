@@ -26,3 +26,21 @@ RestClient::Request.new(
                 :From => '2085955077',
                 :To => '2083168338'}
 ).execute
+
+LONG WAY CONVERSION TO RUBY HASH   - done in irb
+
+Spec_helper.rb
+require 'json'
+
+response = RestClient::Request.new(
+  :method => :post,
+  :url => 'https://api.twilio.com/2010-04-01/Accounts/AC92343d189fc553f58a92f9895da8ced5/Messages.json',
+  :user => 'AC92343d189fc553f58a92f9895da8ced5',
+  :password => 'deea8aec73dd023526f404d2c72b79fe',
+  :payload => { :Body => 'Hello World',
+                :From => '2085955077',
+                :To => '2083168338'}
+).execute
+
+parsed_response = JSON.parse(response)
+parsed_response['status']
