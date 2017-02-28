@@ -113,3 +113,33 @@ describe Message, :vcr => true do
 
 HEROKU
   heroku config:set TWILIO_ACCOUNT_SID=AC3e0af22b6b772460f352ba8c6586fbde
+  
+  
+ --------------------- API CALL simplified
+ 
+ home_controller.rb
+      def index
+        weather_object = Weather.new("97223")
+        @humidity = weather_object.get_humidity()
+      end
+      
+ index.html.erb
+        <h1> The current humidity for <%= @zip %>: <%= @humidity %></h1>
+        
+ services/find_humidity.rb
+         # WEATHER this is our api call
+        class Weather
+
+          def initialize(zip)
+            @zip = zip
+          end
+
+          def get_humidity
+
+            response = HTTParty.get('http://api.openweathermap.org/data/2.5/weather?zip=' + @zip + ',us&appid=f6fa339accfe01cb0e8fe9b9627c48a2')
+            response["main"]["humidity"]
+          end
+        end
+
+ 
+  
