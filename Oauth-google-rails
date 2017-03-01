@@ -1,0 +1,20 @@
+https://www.sitepoint.com/rails-authentication-oauth-2-0-omniauth/
+
+
+Do code first
+
+
+ACCOUNT MANAGEMENT on GOOGLE
+  To obtain the Google key and secret:
+
+  Navigate to console.developers.google.com.
+    Click “Create Project” and give it a name.
+    Open “APIs” section from the right-side menu and make sure Google+ API is enabled.
+    Open “Consent Screen” and fill in “Product Name” (and other fields if you wish).
+    Open “Credentials” and click “Create new Client ID”.
+    Choose “Web Application”.
+    Enter your app’s URL in the “Authorized JavaScript origins” (“http://localhost:3000” for local machine).
+  Enter your app’s URL plus “/auth/google/callback” in “Authorized redirect URIs”.
+
+  Make sure Useremail is filled out.
+  Consistency in naming may be a thing
