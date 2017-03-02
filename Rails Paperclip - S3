@@ -1,1 +1,29 @@
 
+https://devcenter.heroku.com/articles/paperclip-s3
+
+
+gem 'paperclip'
+gem 'aws-sdk', '~> 2.3'
+
+
+# config/environments/production.rb
+config.paperclip_defaults = {
+  storage: :s3,
+  s3_credentials: {
+    bucket: ENV.fetch('S3_BUCKET_NAME'),
+    access_key_id: ENV.fetch('AKIAJNFTXWZWXLU5BMXQ'),
+    secret_access_key: ENV.fetch('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'),
+    s3_region: ENV.fetch('AWS_REGION'),
+  },
+  :s3_host_name => "s3-us-west-2.amazonaws.com",
+}
+
+
+.env
+S3_BUCKET_NAME=ls-picture-gallery
+AWS_ACCESS_KEY_ID=your_access_key_id
+AWS_SECRET_ACCESS_KEY=your_secret_access_key
+AWS_REGION=us-west-2
+
+
+Go into S3 and make a bucket
