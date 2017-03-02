@@ -1,5 +1,6 @@
-
 https://devcenter.heroku.com/articles/paperclip-s3
+
+Done on: https://github.com/jrinard/picture_analyzer
 
 gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
