@@ -55,7 +55,8 @@ build fails first time
 heroku run rake db:migrate (done every time you create a migration you need to run this.)
  
 
- 
+ Reseting database
+ heroku pg:reset database
  
  
  
