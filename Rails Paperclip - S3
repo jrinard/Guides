@@ -11,8 +11,8 @@ config.paperclip_defaults = {
   storage: :s3,
   s3_credentials: {
     bucket: ENV.fetch('S3_BUCKET_NAME'),
-    access_key_id: ENV.fetch('AKIAJNFTXWZWXLU5BMXQ'),
-    secret_access_key: ENV.fetch('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'),
+    access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
+    secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
     s3_region: ENV.fetch('AWS_REGION'),
   },
   :s3_host_name => "s3-us-west-2.amazonaws.com",
@@ -20,10 +20,48 @@ config.paperclip_defaults = {
 
 
 .env
-S3_BUCKET_NAME=ls-picture-gallery
-AWS_ACCESS_KEY_ID=your_access_key_id
-AWS_SECRET_ACCESS_KEY=your_secret_access_key
-AWS_REGION=us-west-2
+    S3_BUCKET_NAME=ls-picture-gallery
+    AWS_ACCESS_KEY_ID=AKIAJNFTXWZWXLU5BMXQ
+    AWS_SECRET_ACCESS_KEY=SUxbJCBSVu5+wAxQf5N+YmLMXa3elLsyZBHVrZK2
+    AWS_REGION=us-west-2
 
 
 Go into S3 and make a bucket
+      get keys
+      
+
+
+ gem 'dotenv-rails' #for env auth
+ 
+ 
+ 
+ heroku login
+ heroku create picture-gallery
+ 
+  ----------For heroku setup
+         heroku config:set S3_BUCKET_NAME=ls-picture-gallery
+        heroku config:set AWS_ACCESS_KEY_ID=AKIAJNFTXWZWXLU5BMXQ
+        heroku config:set AWS_SECRET_ACCESS_KEY=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
+        heroku config:set AWS_REGION=us-west-2
+ ----------
+ 
+ 
+ commit to github
+ git push heroku master
+ create new pipeline on heroku
+ assign a name
+ search github
+ add existing heroku app.
+ once app has been pushed click arrows and click deployments or something to make things automatic
+    
+    
+ 
+build fails first time
+heroku run rake db:migrate (done every time you create a migration you need to run this.)
+ 
+
+ 
+ 
+ 
+ 
+ 
