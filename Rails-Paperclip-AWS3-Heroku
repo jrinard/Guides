@@ -20,8 +20,8 @@ config.paperclip_defaults = {
 
 .env
     S3_BUCKET_NAME=ls-picture-gallery
-    AWS_ACCESS_KEY_ID=AKIAJNFTXWZWXLU5BMXQ
-    AWS_SECRET_ACCESS_KEY=SUxbJCBSVu5+wAxQf5N+YmLMXa3elLsyZBHVrZK2
+    AWS_ACCESS_KEY_ID=YOURID
+    AWS_SECRET_ACCESS_KEY=YOURKEY
     AWS_REGION=us-west-2
 
 
@@ -38,8 +38,8 @@ commit to github first
  
         For heroku setup of .env
         heroku config:set S3_BUCKET_NAME=ls-picture-gallery
-        heroku config:set AWS_ACCESS_KEY_ID=AKIAJNFTXWZWXLU5BMXQ
-        heroku config:set AWS_SECRET_ACCESS_KEY=SUxbJCBSVu5+wAxQf5N+YmLMXa3elLsyZBHVrZK2
+        heroku config:set AWS_ACCESS_KEY_ID=YOURID
+        heroku config:set AWS_SECRET_ACCESS_KEY=YOURKEY
         heroku config:set AWS_REGION=us-west-2
  
  
