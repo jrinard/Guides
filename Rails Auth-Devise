@@ -12,7 +12,9 @@ config/environments/development.rb addition:
   For custom columns add them to migration or create another.    -   rails generate migration to_add_custom_columns_to_user
 - rake db:migrate
 
-- ApplicationController addition:
+
+ADDITIONAL CUSTOMIZATION
+ApplicationController addition:
   - before_action :authenticate_user! (after protect_from_forgery with: :exception line)
   
 - Home page controller addition (example):
@@ -32,7 +34,7 @@ rails-helper.rb
    config.include Warden::Test::Helpers  or    config.include Devise::Test::IntegrationHelpers, type: :feature
 
 
-CUSTOM FIELDS
+CUSTOM FIELDS AND EDITING VIEWS
 
 rails generate devise:views   - will make a devise folder
 config/initializers/devise.rb - line 223
