@@ -53,6 +53,12 @@ commit to github first
     
 build fails first time
 heroku run rake db:migrate (done every time you create a migration you need to run this.)
+
+Connecting from another computer
+heroku login
+heroku git:remote -a outfit-jr (Or project name)
+OR CREATe
+heroku create your_app_name.
  
 
  Reseting database
