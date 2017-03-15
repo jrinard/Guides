@@ -13,6 +13,8 @@ DATABASE BASIC OVERVIEW
   \d to
   \q to quit
  
+ http://guides.rubyonrails.org/active_record_basics.html
+ 
   REMINDER DATABASE
       CREATE TABLE contacts (name varchar, age int, birthday timestamp);
       ALTER TABLE contacts ADD family boolean;
