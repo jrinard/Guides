@@ -34,6 +34,8 @@ DATABASE BASIC OVERVIEW
       a = Picture.find_by_id(1)
       a.created_at = '2017-01-11 01:36:41'
       a.save
+      
+      Address.where(:cid => 15).update_all(user_name : 'Samuel')
 
       RAILS CONSOLE
      rails console or rails c
