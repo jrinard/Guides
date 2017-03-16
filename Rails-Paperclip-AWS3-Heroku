@@ -61,9 +61,9 @@ OR CREATe
 heroku create your_app_name.
  
 
- Reseting database
+HEROKU COMMANDS
  heroku pg:reset database
- 
+ heroku run rake db:seed
  
  
  
