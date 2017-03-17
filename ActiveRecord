@@ -1,1 +1,29 @@
  http://guides.rubyonrails.org/active_record_basics.html
+
+
+http://guides.rubyonrails.org/active_record_querying.html
+
+2.2 Array Conditions - helps with sql injection
+
+Client.where("orders_count = ?", params[:orders])    - params replaces the ?
+
+
+
+19.2 pluck
+
+Client.where(active: true).pluck(:id)
+# SELECT id FROM clients WHERE active = 1
+# => [1, 2, 3]
+ 
+Client.distinct.pluck(:role)
+# SELECT DISTINCT role FROM clients
+# => ['admin', 'member', 'guest']
+ 
+Client.pluck(:id, :name)
+# SELECT clients.id, clients.name FROM clients
+# => [[1, 'David'], [2, 'Jeremy'], [3, 'Jose']]
+
+
+Client.pluck(:id)
+# or
+Client.pluck(:id, :name)
