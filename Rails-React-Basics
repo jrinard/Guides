@@ -1,6 +1,11 @@
-apm install react
+First test rails as api with react https://www.pluralsight.com/guides/ruby-ruby-on-rails/building-a-crud-interface-with-react-and-ruby-on-rails
 
+
+apm install react
 
 gem 'react-rails'
 
 rails g react:install
+
+
+https://facebook.github.io/react/docs/react-component.html
