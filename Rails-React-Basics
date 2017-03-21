@@ -1,1 +1,6 @@
 apm install react
+
+
+gem 'react-rails'
+
+rails g react:install
