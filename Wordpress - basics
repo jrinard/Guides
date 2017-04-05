@@ -1,5 +1,6 @@
 Force SSL with . htaccess
 https://www.siteground.com/kb/how-to-force-ssl-with-htaccess/
+https://www.siteground.com/kb/How_to_redirect_my_website_to_be_opened_through_HTTPS/
 
 If you want to force your entire website to go through https, you can add these rules to your .htaccess file
 
