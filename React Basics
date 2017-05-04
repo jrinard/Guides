@@ -1,4 +1,4 @@
-REACT Setup Webpack
+REACT Setup Webpack for dev environment
 
 
 PACKAGE JSON
@@ -16,6 +16,10 @@ npm install --save-dev babel-preset-react babel-preset-es2015
 CONFIGURING WEBPACK - installed locally above 
 Local run webpack in terminal with: node_modules/.bin/webpack
 globally run webpack with: webpack           - npm install --save-dev webpack
+
+package.json
+"build": "webpack"   add to scripts
+    Then you can run build as - npm run build
 
 
 webpack.config.js - in the root
@@ -40,7 +44,7 @@ webpack.config.js - in the root
 
 app.js
       import React from 'react';
-      import ReactDom from 'react-dom';
+      import ReactDOM from 'react-dom';
       
 index.html
       <script src="bundle.js"></script>
