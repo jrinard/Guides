@@ -1,3 +1,10 @@
+
+--- CREATE REACT APP SHORT VERSION
+Install globally    -  npm install -g create-react-app
+Create new Project  -  create-react-app name
+
+
+
 ----- REACT - WEBPACK DEV SERVER + CSS
 
 CONFIGURING WEBPACK 
