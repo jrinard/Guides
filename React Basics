@@ -4,6 +4,9 @@ Install globally    -  npm install -g create-react-app
 Create new Project  -  create-react-app name
 Note: package.json - just update react-scripts to have all updates
 
+npm start
+npm eject = gives you access to all the configurations
+
 
 
 ----- REACT - WEBPACK DEV SERVER + CSS
