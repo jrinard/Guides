@@ -6,5 +6,34 @@ npm init -y
 npm install --save react react-dom
 npm install --save-dev webpack
 npm install --save-dev babel-core babel-loader          - transforms jsx into js for browsers
-
 npm install --save-dev babel-preset-react babel-preset-es2015
+
+.babelrc in root
+{
+  "presets": ["react", "es2015"]
+}
+
+CONFIGURING WEBPACK
+webpack.config.js - in the root
+      module.exports =  {
+        entry: './app.js',
+
+        output: {
+         path: 'build',
+        filename: 'bundle.js'
+        },
+
+        module: {
+         loaders: [
+            {
+              test: /\.js$/,
+             exclude: /node_modules/,
+             loader: 'babel-loader'
+           }
+          ]
+        }
+      };
+
+app.js
+      import React from 'react';
+      import ReactDom from 'react-dom';
