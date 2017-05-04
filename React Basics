@@ -13,7 +13,11 @@ npm install --save-dev babel-preset-react babel-preset-es2015
   "presets": ["react", "es2015"]
 }
 
-CONFIGURING WEBPACK
+CONFIGURING WEBPACK - installed locally above 
+Local run webpack in terminal with: node_modules/.bin/webpack
+globally run webpack with: webpack           - npm install --save-dev webpack
+
+
 webpack.config.js - in the root
       module.exports =  {
         entry: './app.js',
