@@ -1,3 +1,10 @@
 REACT Setup Webpack
 
-npm init -y
+
+PACKAGE JSON
+npm init -y  
+npm install --save react react-dom
+npm install --save-dev webpack
+npm install --save-dev babel-core babel-loader          - transforms jsx into js for browsers
+
+npm install --save-dev babel-preset-react babel-preset-es2015
