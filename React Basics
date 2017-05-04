@@ -60,5 +60,13 @@ index.html
       <script src="bundle.js"></script>
       
       
+----- HOT RELOADING to keep STATES
+
+npm install --save-dev react-hot-loader
+
+loaders: ['react-hot-loader', 'babel-loader']
+"start": "webpack-dev-server --port 8000 --inline --hot"
+      
+      
       
 
