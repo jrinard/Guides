@@ -22,7 +22,7 @@ npm install --save-dev style-loader css-loader
 package.json
       add to scripts
           "build": "webpack"   
-          "start": "webpack-dev-server --port 8000"
+          "start": "webpack-dev-server --port 8000 --inline"
       Then you can run server as - npm start
 
 
@@ -53,6 +53,7 @@ webpack.config.js - in the root
 app.js
       import React from 'react';
       import ReactDOM from 'react-dom';
+      import './css/style.css';
       
 index.html
       <script src="bundle.js"></script>
