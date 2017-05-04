@@ -1,4 +1,4 @@
------ REACT - WEBPACK DEV SERVER
+----- REACT - WEBPACK DEV SERVER + CSS
 
 CONFIGURING WEBPACK 
   LOCALLY installed below - recommended
@@ -11,6 +11,7 @@ npm install --save-dev webpack
 npm install --save-dev babel-core babel-loader          - transforms jsx into js for browsers
 npm install --save-dev babel-preset-react babel-preset-es2015
 npm install --save-dev webpack-dev-server
+npm install --save-dev style-loader css-loader
 
 
 .babelrc in root
@@ -40,7 +41,11 @@ webpack.config.js - in the root
               test: /\.js$/,
              exclude: /node_modules/,
              loader: 'babel-loader'
-           }
+            },
+            {
+              test: /\.css$/,
+              loader: 'style-loader!css-loader'
+            }
           ]
         }
       };
