@@ -37,3 +37,6 @@ webpack.config.js - in the root
 app.js
       import React from 'react';
       import ReactDom from 'react-dom';
+      
+index.html
+      <script src="bundle.js"></script>
