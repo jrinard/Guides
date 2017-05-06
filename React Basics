@@ -73,7 +73,13 @@ index.html
       
       
 
-      
-      
+---- REACT ROUTER
+
+ npm install --save react-router   - npm install --save react-router@3.0.2
+ index.js - import { Router, Route, hashHistory } from 'react-router';
+
+needs more instruction
+
+
       
 
