@@ -82,6 +82,10 @@ UPDATE FROM ROUTER 4
 
 npm install --save react-router-dom
 
+---React with Redux 
+
+npm install --save redux react-redux
+
 
       
 
