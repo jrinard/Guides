@@ -1,1 +1,75 @@
-http://www.rymcmahon.com/articles/2
+Alternatives to Textacular
+
+
+-----  SEARCHING OPTION 1   - exact search
+
+units_controller.rb
+
+def index
+    if params[:familysearch]
+      @searchResults = if params[:familysearch]
+        Unit.where("familyname ILIKE ?", params[:familysearch])
+      end
+    end
+end
+
+REMEBER 
+add :familysearch to def unit_params end
+
+
+index.html.erb
+
+              <h3>Search for Family</h3>
+                <%= form_tag(units_path, method: :get) do %>
+                  <%= text_field_tag :familysearch %>
+                  <%= submit_tag 'Search' %>
+                <% end %><br>
+                
+                
+                <% if @searchResults %>
+                <% for unit in @searchResults %>
+                  <div>
+                      <%= link_to "#{unit.familyname}", unit_path(unit), :class => "family-card btn" %><br>
+                  </div>
+                <% end %>
+              <% end %> <!-- of SearchResults end -->
+              
+              
+              
+   -----  SEARCHING OPTION 2
+          http://www.rymcmahon.com/articles/2
+
+models/unit.rb
+
+  def self.search(search)
+    where("familyName LIKE ?", "%#{search}%")
+  end
+  
+unit_controller.rb
+     if params[:search]
+      @searchResults = Unit.search(params[:search])
+    else
+    end
+
+index.html.erb (units index)
+
+              <h3>Search for Family</h3>
+
+              <%= form_tag(units_path, :method => "get", id: "search-form") do %>
+                  <%= text_field_tag :search, params[:search], placeholder: "Search Families" %>
+                  <%= submit_tag "Search", :name => nil %>
+              <% end %>
+
+
+              <% if @searchResults %>
+                <% for unit in @searchResults %>
+                  <div>
+                      <%= link_to "#{unit.familyname}", unit_path(unit), :class => "family-card btn" %><br>
+                  </div>
+                <% end %>
+              <% end %> <!-- of SearchResults end -->
+
+
+
+
+
