@@ -4,3 +4,22 @@ rails g model Project programmer:references client:references
 rake db:migrate
 
 The :references syntax is a shortcut for creating an index on the preceding field name, programmer and client in this instance, as well as marking them as foreign key constraints for the programmers and clients database tables.
+
+
+Built-in Association Methods
+collection(force_reload = false)
+collection<<(object, ...)
+collection.delete(object, ...)
+collection.destroy(object, ...)
+collection=(objects)
+collection_singular_ids
+collection_singular_ids=(ids)
+collection.clear
+collection.empty?
+collection.size
+collection.find(...)
+collection.where(...)
+collection.exists?(...)
+collection.build(attributes = {}, ...)
+collection.create(attributes = {})
+collection.create!(attributes = {})
