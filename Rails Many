@@ -1,3 +1,6 @@
+
+has_many :through
+
 rails g model Programmer name:string
 rails g model Client name:string
 rails g model Project programmer:references client:references
@@ -23,3 +26,10 @@ collection.exists?(...)
 collection.build(attributes = {}, ...)
 collection.create(attributes = {})
 collection.create!(attributes = {})
+
+
+- rails console sample  - positions is the join
+department = Department.create(name: "testD")
+part = Part.create(firstName: 'TP')
+department.positions.create(part: part)
+department.parts
