@@ -2,3 +2,5 @@ rails g model Programmer name:string
 rails g model Client name:string
 rails g model Project programmer:references client:references
 rake db:migrate
+
+The :references syntax is a shortcut for creating an index on the preceding field name, programmer and client in this instance, as well as marking them as foreign key constraints for the programmers and clients database tables.
