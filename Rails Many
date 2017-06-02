@@ -1,0 +1,4 @@
+rails g model Programmer name:string
+rails g model Client name:string
+rails g model Project programmer:references client:references
+rake db:migrate
