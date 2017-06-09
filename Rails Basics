@@ -38,6 +38,7 @@ DATABASE BASIC OVERVIEW
       a.save
       
       Address.where(:cid => 15).update_all(user_name : 'Samuel')
+       Event.where(:id => 1).update_all(date: '2017-04-04')
 
       RAILS CONSOLE
      rails console or rails c
