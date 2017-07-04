@@ -6,3 +6,7 @@ Many to Many
 user = User.create(name: "tom")
 user.forum_threads.create name: "First Thread"
 ForumThread.create user: user, name: "Second Thread"
+
+
+e = Revent.create(name: "TestEvent")
+e.part.create firstname: "TestPerson"
