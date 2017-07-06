@@ -73,3 +73,7 @@ registrations_controller.rb - create one
       
 Routes.rb 
         devise_for :users, controllers: { registrations: 'registrations' }
+        
+If you have generated views using devise, remove the corresponding form input for 'current_password' in app/views/devise/registrations/edit.html.erb.
+
+Make a users_controller.rb to edit update etc user_params is the important part - Example in Momentum and Retrospect
