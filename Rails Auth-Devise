@@ -77,3 +77,18 @@ Routes.rb
 If you have generated views using devise, remove the corresponding form input for 'current_password' in app/views/devise/registrations/edit.html.erb.
 
 Make a users_controller.rb to edit update etc user_params is the important part - Example in Momentum and Retrospect
+
+--- UPDATING OTHER USERS AS AN ADMIN
+    https://github.com/plataformatec/devise/wiki/How-To:-Manage-users-through-a-CRUD-interface
+    Extra Link for admin roles = https://github.com/plataformatec/devise/wiki/How-To:-Add-an-Admin-Role
+users_controller.rb - put in update
+    if params[:user][:password].blank?
+      params[:user].delete(:password)
+      params[:user].delete(:password_confirmation)
+    end
+    
+ Routes may need to be updated for conflict
+          devise_for :users, :path_prefix => 'my'
+           resources :users
+
+
