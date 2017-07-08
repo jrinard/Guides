@@ -60,6 +60,7 @@ build fails the first time
       heroku run rake db:migrate (done every time you create a migration you need to run this.)
       heroku pg:reset database
       heroku run rake db:seed
+      heroku run rails console - Find entries to modify
  
  
  //// Connecting from another computer
