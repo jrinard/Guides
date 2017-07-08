@@ -2,6 +2,7 @@ https://devcenter.heroku.com/articles/paperclip-s3
 
 Done on: https://github.com/jrinard/picture_analyzer
 
+/// PaperClip and AWS
 gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
 
@@ -31,7 +32,7 @@ Go into S3 and make a bucket
 gem 'dotenv-rails' #for env auth
  
  
-HEROKU 
+/// HEROKU 
 commit to github first
  heroku login
  heroku create picture-gallery
@@ -42,7 +43,6 @@ commit to github first
         heroku config:set AWS_SECRET_ACCESS_KEY=YOURKEY
         heroku config:set AWS_REGION=us-west-2
  
- 
  git push heroku master
  
  ON HEROKU - Create New Pipeline to auto update heroku
@@ -51,19 +51,21 @@ commit to github first
         add existing heroku app.       
         once app has been pushed click arrows and click deployments or something to make things automatic
     
-build fails first time
-heroku run rake db:migrate (done every time you create a migration you need to run this.)
+build fails the first time
 
-Connecting from another computer
-heroku login
-heroku git:remote -a outfit-jr (Or project name)
-OR CREATe
-heroku create your_app_name.
- 
 
-HEROKU COMMANDS
- heroku pg:reset database
- heroku run rake db:seed
+
+////HEROKU COMMANDS
+      heroku login
+      heroku run rake db:migrate (done every time you create a migration you need to run this.)
+      heroku pg:reset database
+      heroku run rake db:seed
  
+ 
+ //// Connecting from another computer
+      heroku login
+      heroku git:remote -a outfit-jr (Or project name)
+      OR CREATE
+      heroku create your_app_name.
  
  
