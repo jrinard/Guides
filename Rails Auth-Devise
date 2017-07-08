@@ -56,8 +56,8 @@ application_controller.rb
 
 
 --- TROUBLESHOOTING
-if delete is not working then go to config/initializers/devise.rb
-change config.signout via [:delete, :get]
+if delete is not working then go to config/initializers/devise.rb line 245
+change config.sign_out via [:delete, :get]
 
 --- UPDATING WITHOUT CURRENT_PASSWORD OVERRIDE
 https://github.com/plataformatec/devise/wiki/How-To:-Allow-users-to-edit-their-account-without-providing-a-password
