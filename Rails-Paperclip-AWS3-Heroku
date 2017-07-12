@@ -69,4 +69,4 @@ build fails the first time
       OR CREATE
       heroku create your_app_name.
  
- 
+ /// have has issue with javascript compiling.  running rake assets:precompile  fixed on retrospect
