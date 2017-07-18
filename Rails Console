@@ -10,3 +10,7 @@ ForumThread.create user: user, name: "Second Thread"
 
 e = Revent.create(name: "TestEvent")
 e.part.create firstname: "TestPerson"
+
+
+u = User.last
+u.update(role: "admin")
