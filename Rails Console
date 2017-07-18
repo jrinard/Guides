@@ -14,3 +14,6 @@ e.part.create firstname: "TestPerson"
 
 u = User.last
 u.update(role: "admin")
+
+u = User.where(id: "2")
+u.update(accountnumber: "2084231710")
