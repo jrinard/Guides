@@ -62,7 +62,8 @@ build fails the first time
       heroku run rake db:seed
       heroku run rails console - Find entries to modify
       
-      heroku restart && heroku pg:reset DATABASE --confirm APNAME && heroku run rake db:migrate
+      Total Reset 
+      heroku restart && heroku pg:reset DATABASE --confirm APPNAME && heroku run rake db:migrate
  
  
  //// Connecting from another computer
