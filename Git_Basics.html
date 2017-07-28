@@ -18,6 +18,8 @@ Git Guide
  - Git status (to confirm everything is up to date)
 
 EDIT last commit - git commit --amend -m "New message"
+
+Count all lines - git diff --shortstat `git hash-object -t tree /dev/null`
   
 Solo Setup
   git config --global user.name “Joshua Rinard“
