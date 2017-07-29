@@ -1,3 +1,6 @@
+First time I did this I had already created a heroku app and pushed everything there before. You may not need to do that.
+
+
 First log into heroku.
 Menu -> Elements -> Add-ons -> Deployment in list -> Codeship -> Install Codeship button
 
