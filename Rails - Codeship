@@ -1,0 +1,35 @@
+
+Main Guide 
+https://documentation.codeship.com/basic/continuous-deployment/deployment-to-heroku/#add-ssh-key-to-heroku
+
+On CODESHIP
+
+TEST TAB
+Specify Ruby Version
+#rvm use 2.2.2p95 --install
+rvm use $(cat .ruby-version) --install	Add file to project root
+
+DEPLOY TAB
+Go to Deployment Config  Project Settings > Deploy on the right
+Add New Deployment Pipeline
+	Choose Branch
+	Add Name as it is on heroic
+	Add Heroku regular API key get  form here https://dashboard.heroku.com/account
+	Choose Heroku
+	
+
+ENVIRONMENT TAB
+Add .env keys
+
+REPOSITORY TAB
+Connect repo from bitbucket
+
+GENERAL TAB
+Supplies api keys for codeship
+Copy SSH and log into heroku 
+
+
+On HEROKU
+Paste SSH into SSH Keys on https://dashboard.heroku.com/account
+
+Both ssH and Regular are important
