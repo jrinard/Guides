@@ -1,3 +1,8 @@
+First log into heroku.
+Menu -> Elements -> Add-ons -> Deployment in list -> Codeship -> Install Codeship button
+
+At installation it pulls you into Codeship.
+Pro or Basic - I just did basic the first time.
 
 Main Guide 
 https://documentation.codeship.com/basic/continuous-deployment/deployment-to-heroku/#add-ssh-key-to-heroku
