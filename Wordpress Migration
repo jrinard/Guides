@@ -1,0 +1,32 @@
+WORDPRESS MIGRATION -  - http://www.wpexplorer.com/migrating-wordpress-website/
+Move a wordpress site from one server cpanel to another.
+
+BEFORE YOU BEGIN - All-In-One WP Migration plugin. If site is too big proceed below
+
+1. Get old files - public_html
+
+2. Get old site database file - quick export from phpMyAdmin or grab from cpanel backup file
+
+3. Create New Cpanel Account
+
+4. Install wordpress on new server with database and user. 1 click install with softaculous
+5. Download wp-config.php from new install to get username password and database
+  
+6. Edit wp-config.php inside the old backup - (Tip Save a backup before editing)
+	/// Put the new databases keys from the new file into the old config///
+		    define('DB_NAME', 'db_name');
+	    	define('DB_USER', 'db_user');
+		    define('DB_PASSWORD', 'db_pass');
+		
+
+6. Import old Database file into new server phpMyAdmin
+	Launch phpMyAdmin from the cPanel software on your new server and select your new database from the list on the left hands sidebar. Once it opens select the Import tab from the navigation menu.
+	In the File to Import section click the Choose File button and select the SQL file you exported previously.
+	Un-tick the Partial Import check box, make sure the format is set to SQL and then click the Go button. The database import will now begin.
+7. Upload wordpress site files to new host
+
+
+8. Point domain
+
+9. Consider search and replace to fix places old url was used
+https://github.com/interconnectit/Search-Replace-DB
