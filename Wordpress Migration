@@ -18,15 +18,15 @@ BEFORE YOU BEGIN - All-In-One WP Migration plugin. If site is too big proceed be
 	    	define('DB_USER', 'db_user');
 		    define('DB_PASSWORD', 'db_pass');
 		
-
-6. Import old Database file into new server phpMyAdmin
+7. Import old Database file into new server phpMyAdmin
 	Launch phpMyAdmin from the cPanel software on your new server and select your new database from the list on the left hands sidebar. Once it opens select the Import tab from the navigation menu.
 	In the File to Import section click the Choose File button and select the SQL file you exported previously.
-	Un-tick the Partial Import check box, make sure the format is set to SQL and then click the Go button. The database import will now begin.
-7. Upload wordpress site files to new host
 
+8. Upload old wordpress site files to new host - public html
 
-8. Point domain
+9. Point domain to new server
 
-9. Consider search and replace to fix places old url was used
+10. After install confirm your login details still work.
+
+12. Consider search and replace to fix places old url was used - Some links may break
 https://github.com/interconnectit/Search-Replace-DB
