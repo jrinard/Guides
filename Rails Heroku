@@ -1,0 +1,73 @@
+
+/// DATABASE BACKUPS  - https://devcenter.heroku.com/articles/heroku-postgresql#pg-push-and-pg-pull
+
+heroku pg:pull HEROKU_POSTGRESQL_MAGENTA mylocaldb --app sushi
+      Creates a new local database named “mylocaldb” and then pull data from database at DATABASE_URL from the app “sushi”. 
+      In order to prevent accidental data overwrites and loss, the local database must not exist. 
+      You will be prompted to drop an already existing local database before proceeding.
+
+PGUSER=postgres PGPASSWORD=password heroku pg:pull HEROKU_POSTGRESQL_MAGENTA mylocaldb --app sushi
+
+heroku pg:push mylocaldb HEROKU_POSTGRESQL_MAGENTA --app sushi
+      Push local to the database at DATABASE_URL on the app “sushi”.
+      In order to prevent accidental data overwrites and loss, the remote database must be empty. 
+      You will be prompted to pg:reset an already a remote database that is not empty.
+
+/// PG:BACKUP   -  https://devcenter.heroku.com/articles/heroku-postgres-backups
+heroku pg:backups:capture --app sushi
+heroku pg:backups:cancel
+
+Schedule-    heroku pg:backups:schedule DATABASE_URL --at '02:00 America/Los_Angeles' --app sushi
+      NOTE: If you upgrade the database from hobby tier to production tier, the schedule will be lost.
+      NOTE: When a backup is restored to a new database, the schedule from the original database does not get restored, a new schedule needs to be created.
+Cancel-     heroku pg:backups:unschedule DATABASE_URL --app sushi
+View Schedules-    heroku pg:backups:schedules --app sushi
+Download1 (Makes PUBLIC URL)-   heroku pg:backups:url b001 --app sushi
+Download2 - heroku pg:backups:download
+Check Status- heroku pg:backups --app sushi
+Delete Backup- heroku pg:backups:delete b101 --app foo
+Restore Backup- heroku pg:backups:restore b101 DATABASE_URL --app sushi
+Restore from URL- heroku pg:backups:restore 'https://s3.amazonaws.com/me/items/mydb.dump' DATABASE_URL -a sushi
+
+/// HEROKU 
+commit to github first
+ heroku login
+ heroku create picture-gallery
+ 
+        For heroku setup of .env
+        heroku config:set S3_BUCKET_NAME=ls-picture-gallery
+        heroku config:set AWS_ACCESS_KEY_ID=YOURID
+        heroku config:set AWS_SECRET_ACCESS_KEY=YOURKEY
+        heroku config:set AWS_REGION=us-west-2
+ 
+ git push heroku master
+ 
+ ON HEROKU - Create New Pipeline to auto update heroku
+        assign a name
+        search github and select repo
+        add existing heroku app.       
+        once app has been pushed click arrows and click deployments or something to make things automatic
+    
+build fails the first time
+
+
+
+////HEROKU COMMANDS
+      heroku login
+      heroku run rake db:migrate (done every time you create a migration you need to run this.)
+      heroku pg:reset database
+      heroku run rake db:seed
+      heroku run rails console - Find entries to modify
+      
+      Total Reset 
+      heroku restart && heroku pg:reset DATABASE --confirm APPNAME && heroku run rake db:migrate
+      heroku restart && heroku pg:reset DATABASE --confirm retrospect-jr && heroku run rake db:migrate
+    
+ 
+ //// Connecting from another computer
+      heroku login
+      heroku git:remote -a outfit-jr (Or project name)
+      OR CREATE
+      heroku create your_app_name.
+ 
+ /// have has issue with javascript compiling.  running rake assets:precompile  fixed on retrospect
