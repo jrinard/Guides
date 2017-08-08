@@ -21,7 +21,7 @@ heroku pg:push mylocaldb HEROKU_POSTGRESQL_MAGENTA --app sushi
       You will be prompted to pg:reset an already a remote database that is not empty.
 
 /// PG:BACKUP   -  https://devcenter.heroku.com/articles/heroku-postgres-backups
-heroku pg:backups:capture --app sushi
+heroku pg:backups:capture --app retrospect-jr
 heroku pg:backups:cancel
 
 Schedule-    heroku pg:backups:schedule DATABASE_URL --at '02:00 America/Los_Angeles' --app sushi
