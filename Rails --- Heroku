@@ -1,7 +1,12 @@
 
 /// DATABASE BACKUPS  - https://devcenter.heroku.com/articles/heroku-postgresql#pg-push-and-pg-pull
 
-heroku pg:pull DATABASE_URL retrospect-jr                         might need --app before name
+1. DROP LOCAL: rake db:drop
+
+                                  LOCAL           APP NAME
+2: heroku pg:pull DATABASE_URL retrospect --app retrospect-jr
+
+
 
 heroku pg:pull HEROKU_POSTGRESQL_MAGENTA mylocaldb --app sushi
       Creates a new local database named “mylocaldb” and then pull data from database at DATABASE_URL from the app “sushi”. 
