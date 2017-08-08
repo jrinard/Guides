@@ -1,6 +1,8 @@
 
 /// DATABASE BACKUPS  - https://devcenter.heroku.com/articles/heroku-postgresql#pg-push-and-pg-pull
 
+heroku pg:pull DATABASE_URL retrospect-jr                         might need --app before name
+
 heroku pg:pull HEROKU_POSTGRESQL_MAGENTA mylocaldb --app sushi
       Creates a new local database named “mylocaldb” and then pull data from database at DATABASE_URL from the app “sushi”. 
       In order to prevent accidental data overwrites and loss, the local database must not exist. 
