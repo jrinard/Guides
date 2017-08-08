@@ -1,14 +1,17 @@
 
 /// DATABASE BACKUPS  - https://devcenter.heroku.com/articles/heroku-postgresql#pg-push-and-pg-pull
 
-heroku pg:backups:capture --app retrospect-jr
+0. heroku pg:backups:capture --app retrospect-jr
 
 1. DROP LOCAL: rake db:drop
 
                                   LOCAL           APP NAME
-2: heroku pg:pull DATABASE_URL retrospect_development --app retrospect-jr
+2. heroku pg:pull DATABASE_URL retrospect_development --app retrospect-jr
     NOTE: PULLED to development
-
+    
+    
+3. rake db:reset
+3.1. heroku pg:push retrospect_development DATABASE_URL --app retrospect-jr
 
 
 heroku pg:pull HEROKU_POSTGRESQL_MAGENTA mylocaldb --app sushi
