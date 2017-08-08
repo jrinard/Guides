@@ -1,40 +1,30 @@
 
 /// DATABASE BACKUPS  - https://devcenter.heroku.com/articles/heroku-postgresql#pg-push-and-pg-pull
 
-0. heroku pg:backups:capture --app retrospect-jr
 
-1. DROP LOCAL: rake db:drop
+/// PULL DATABASE
+    1. CREATE BACKUP FILE -  heroku pg:backups:capture --app retrospect-jr
 
-                                  LOCAL           APP NAME
-2. heroku pg:pull DATABASE_URL retrospect_development --app retrospect-jr
-    NOTE: PULLED to development
+    2. DROP LOCAL DB: rake db:drop
+                            
+    3. PULL TO LOCAL-                       LOCAL                 APP NAME
+      heroku pg:pull DATABASE_URL retrospect_development --app retrospect-jr
+       NOTE: Pulled to development
     
-    
-3. rake db:reset
-3.1. heroku pg:push retrospect_development DATABASE_URL --app retrospect-jr
+/// PUSH DATABASE -  Assuming you have been working locally     
+    4. RESET heroku server - heroku rake db:reset
+       heroku pg:push retrospect_development DATABASE_URL --app retrospect-jr
 
-
-heroku pg:pull HEROKU_POSTGRESQL_MAGENTA mylocaldb --app sushi
-      Creates a new local database named “mylocaldb” and then pull data from database at DATABASE_URL from the app “sushi”. 
-      In order to prevent accidental data overwrites and loss, the local database must not exist. 
-      You will be prompted to drop an already existing local database before proceeding.
-
-PGUSER=postgres PGPASSWORD=password heroku pg:pull HEROKU_POSTGRESQL_MAGENTA mylocaldb --app sushi
-
-heroku pg:push mylocaldb HEROKU_POSTGRESQL_MAGENTA --app sushi
-      Push local to the database at DATABASE_URL on the app “sushi”.
-      In order to prevent accidental data overwrites and loss, the remote database must be empty. 
-      You will be prompted to pg:reset an already a remote database that is not empty.
 
 /// PG:BACKUP   -  https://devcenter.heroku.com/articles/heroku-postgres-backups
 heroku pg:backups:capture --app retrospect-jr
 heroku pg:backups:cancel
 
-Schedule-    heroku pg:backups:schedule DATABASE_URL --at '02:00 America/Los_Angeles' --app sushi
+Schedule-    heroku pg:backups:schedule DATABASE_URL --at '02:00 America/Los_Angeles' --app retrospect-jr
       NOTE: If you upgrade the database from hobby tier to production tier, the schedule will be lost.
       NOTE: When a backup is restored to a new database, the schedule from the original database does not get restored, a new schedule needs to be created.
 Cancel-     heroku pg:backups:unschedule DATABASE_URL --app sushi
-View Schedules-    heroku pg:backups:schedules --app sushi
+View Schedules-    heroku pg:backups:schedules --app retrospect-jr
 Download1 (Makes PUBLIC URL)-   heroku pg:backups:url b001 --app sushi
 Download2 - heroku pg:backups:download
 Check Status- heroku pg:backups --app sushi
