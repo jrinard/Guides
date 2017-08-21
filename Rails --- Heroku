@@ -74,3 +74,11 @@ build fails the first time
       heroku create your_app_name.
  
  /// have has issue with javascript compiling.  running rake assets:precompile  fixed on retrospect
+ 
+ 
+ 
+ Godaddy forward to Heroku settings
+    A @ 50.63.202.1   - Current godaddy forward ip
+    CNAME www  reviewbox.io.herokudns.com   - Taken from heroku after adding a domain
+ 
+ 
