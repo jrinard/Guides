@@ -18,5 +18,6 @@ u.update(role: "admin")
 u = User.where(id: "2")
 u.update(accountnumber: "2084231710")
 
-Works as well
+Finding by ID
+u = Template.find(2)
 u.update_attribute(:default_template, "true")
