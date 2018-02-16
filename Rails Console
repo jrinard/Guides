@@ -21,3 +21,5 @@ u.update(accountnumber: "2084231710")
 Finding by ID
 u = Template.find(2)
 u.update_attribute(:default_template, "true")
+
+u = Customer.where(inbound: "true")
