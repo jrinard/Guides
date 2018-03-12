@@ -23,3 +23,7 @@ u = Template.find(2)
 u.update_attribute(:default_template, "true")
 
 u = Customer.where(inbound: "true")
+
+
+u = User.where(id: "2")
+u.update(messages_switch: "true")
