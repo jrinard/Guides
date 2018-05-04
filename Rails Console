@@ -27,3 +27,6 @@ u = Customer.where(inbound: "true")
 
 u = User.where(id: "2")
 u.update(messages_switch: "true")
+
+
+Order.where(email: @hotelUser.email).where.not(hotel_user_id: nil)
