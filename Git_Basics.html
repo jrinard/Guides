@@ -17,6 +17,15 @@ Git Guide
  - Git push jr master (pushes files to github, per person)
  - Git status (to confirm everything is up to date)
 
+STASH
+  git stash
+  git status
+  git list - to view all stashes
+  git stash apply - applies most recent
+  git stash apply stash@{2} - applies specific stash
+  git stash drop - to delete
+  git stash branch - for creating a new branch out of the stash
+
 EDIT last commit - git commit --amend -m "New message"
 
 Count all lines - git diff --shortstat `git hash-object -t tree /dev/null`
