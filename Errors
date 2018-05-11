@@ -1,0 +1,3 @@
+Issues with Nokogiri not bunding because of native extensions. 
+    run xcode-select --install 
+    Gist is I had to reinstall the tools and accept the user agreement.
