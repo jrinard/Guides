@@ -1,3 +1,7 @@
+Factory bot guide - https://devhints.io/factory_bot
+
+
+
 =Navigating=
     visit('/projects')
     visit(post_comments_path(post))
