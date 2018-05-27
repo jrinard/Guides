@@ -3,6 +3,10 @@
 
 http://guides.rubyonrails.org/active_record_querying.html
 
+Person.find_by(id: '1')
+Person.find_by(name: 'Spartacus', rating: 4)
+
+
 2.2 Array Conditions - helps with sql injection
 
 Client.where("orders_count = ?", params[:orders])    - params replaces the ?
