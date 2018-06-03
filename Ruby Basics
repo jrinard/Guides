@@ -1,3 +1,35 @@
+
+TAKEN FROM LEARN HOW TO PROGRAM 6-3-18
+Mac
+If you're using Ruby on a Mac, it is set up by default, but you can't modify or upgrade it.
+
+There are two ways to handle this:
+
+1) The easy way is to prepend the sudo command whenever you need to change something. You'll see in the next lesson that you'll need to run the command gem install - you'd simply run sudo gem install instead. Your computer will prompt you to enter your password.
+
+2) Most developers don't use the pre-installed version of Ruby on their Macs. Instead, they configure several systems to help them manage Ruby installation (and other programs), and manage different versions of Ruby. You don't need to go this route immediately, but at some point you should do this. Just a warning: this process is very error-prone (I'd estimate about 20% of installs go awry), so be prepared to do some Googling and head-scratching to figure out how to get past any problems.
+
+Also, if you've installed Ruby successfully before, be careful. You've probably followed instructions for using RVM. There's no reason to change your setup unless you really want to. If you'd like to use the approach I'm about to describe, uninstall RVM first by typing $ rvm implode.
+
+Okay, here goes:
+
+Run $ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)". This will install Homebrew, a package manager for OS X that makes it easy to install developer software. When you finish, Homebrew might tell you how to install a compiler (it differs depending on your version of OS X).
+Run $ echo 'export PATH=/usr/local/bin:$PATH' >> ~/.bash_profile. This tells your system where to find the programs you install with Homebrew. Then, run $ source ~/.bash_profile to add this configuration to your open terminal window.
+Run $ brew doctor and fix any problems it tells you about.
+Run $ brew install ruby-install to install ruby-install, a tool for installing Ruby. (Duh.) Then run $ ruby-install ruby 2.2.2 to install Ruby. Also, you can run $ rm -rf ~/src/ to remove the source code that ruby-install downloaded.
+Run $ brew install chruby. This will install chruby, a program to manage which versions of Ruby you're using.
+Run $ echo 'source /usr/local/opt/chruby/share/chruby/chruby.sh' >> ~/.bash_profile and $ echo 'source /usr/local/opt/chruby/share/chruby/auto.sh' >> ~/.bash_profile. This will set up Bash to use chruby and also set up auto-switching of Ruby versions. Then run $ echo "ruby-2.2" > ~/.ruby-version to set your default Ruby version to 2.2. Again, run $ source ~/.bash_profile to add this configuration to your open terminal window.
+The last configuration I'd recommend is that you run $ echo "gem: --no-rdoc --no-ri" > ~/.gemrc so that when you install Ruby gems (more on this later), you won't install the documentation by default. (It takes longer than installing the gems themselves, and better documentation is available online.)
+And with that, you're ready to go. I'd recommend you take a look through the READMEs for chruby and ruby-install, or at least bookmark them for later, so you know how to install other versions of Ruby and switch between them as needed.
+
+Windows
+On Windows, the easiest way to install Ruby is with the RailsInstaller, which includes Ruby and a few other tools we'll use throughout these lessons.
+
+If you have trouble installing Ruby on your computer, you can try an online development environment like SourceLair.
+
+
+
+-------------------------
 Ruby Basics
 
 Setup Database
