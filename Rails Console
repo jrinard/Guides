@@ -1,5 +1,6 @@
 Basics
-
+Specific Route
+rake routes | grep subscription
 
 Many to Many
 
