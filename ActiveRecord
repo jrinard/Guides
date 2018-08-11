@@ -12,6 +12,9 @@ Person.find_by(name: 'Spartacus', rating: 4)
 Client.where("orders_count = ?", params[:orders])    - params replaces the ?
 
 
+GET LAST RECORD
+Message.order(created_at: :asc).last(10) 
+
 
 19.2 pluck
 
