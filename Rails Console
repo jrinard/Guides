@@ -31,3 +31,6 @@ u.update(messages_switch: "true")
 
 
 Order.where(email: @hotelUser.email).where.not(hotel_user_id: nil)
+
+console grab last 5
+Message.last(5)
