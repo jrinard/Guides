@@ -65,6 +65,9 @@ build fails the first time
       Total Reset 
       heroku restart && heroku pg:reset DATABASE --confirm APPNAME && heroku run rake db:migrate
       heroku restart && heroku pg:reset DATABASE --confirm retrospect-jr && heroku run rake db:migrate
+      
+      BASIC RESET
+      heroku restart; heroku pg:reset DATABASE --confirm APP-NAME; heroku run rake db:migrate
     
  
  //// Connecting from another computer
