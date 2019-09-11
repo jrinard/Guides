@@ -1,0 +1,5 @@
+How to setup Active storage
+
+
+Terminal
+rails active_storage:install
