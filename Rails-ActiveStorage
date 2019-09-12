@@ -3,3 +3,28 @@ How to setup Active storage
 
 Terminal
 rails active_storage:install
+  created blobs and attachments
+
+
+config/development and in production
+    config.active_storage.service = :local
+    
+    
+    Config/storage.yml
+    
+test:
+  service: Disk
+  root: <%= Rails.root.join("tmp/storage") %>
+
+local:
+  service: Disk
+  root: <%= Rails.root.join("storage") %>
+  # host: "http://localhost:5000"
+
+# Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
+# amazon:
+#   service: S3
+#   access_key_id: <%= Rails.application.credentials.dig(:aws, :access_key_id) %>
+#   secret_access_key: <%= Rails.application.credentials.dig(:aws, :secret_access_key) %>
+#   region: us-east-1
+#   bucket: your_own_bucket
