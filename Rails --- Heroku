@@ -1,3 +1,22 @@
+/// Heroku database backup and restore plan
+
+// QUICK VERSION
+heroku pg:backups:capture 
+heroku pg:backups
+heroku pg:backups:restore
+
+// DETAILED VERSION
+heroku pg:info                 <-- to get the Database Name
+not needed - heroku addons:add pgbackups    <-- make sure you have the addons for backup
+heroku pg:backups:capture       <-- Capture the backup
+heroku pg:backups               <-- check your backups and make sure its there 
+not needed - heroku pg:reset  DATABASE_NAME <-- Reset your database don't worry we have a backup, replace DATABASE_NAME with database name
+heroku pg:backups:restore DATABASE_NAME b001 <-- Restore the backup again, replace DATABASE_NAME with database name and b001 with your Database version you can see this version number in heroku pg:backups step
+heroku run rake db:migrate     <-- Now you can run your migration and Operate in normal mode. 
+
+
+
+
 
 /// DATABASE BACKUPS  - https://devcenter.heroku.com/articles/heroku-postgresql#pg-push-and-pg-pull
 
@@ -28,12 +47,13 @@ Schedule-    heroku pg:backups:schedule DATABASE_URL --at '02:00 America/Los_Ang
 Cancel-     heroku pg:backups:unschedule DATABASE_URL --app sushi
 View Schedules-    heroku pg:backups:schedules --app retrospect-jr
 Download1 (Makes PUBLIC URL)-   heroku pg:backups:url b001 --app appname
+                                - heroku pg:backups:url b002 --app crm-jr
 Download2 - heroku pg:backups:download
 Check Status- heroku pg:backups --app appname
 Delete Backup- heroku pg:backups:delete b101 --app foo
 !! Restore Backup- heroku pg:backups:restore b101 DATABASE_URL --app appname
               - heroku pg:backups:restore DATABASE_URL --app crm-jr   (no number makes latest   URL comes from download in terminal)
-              
+              heroku pg:backups:restore b002 --app crm-jr
 Restore from URL- heroku pg:backups:restore 'https://s3.amazonaws.com/me/items/mydb.dump' DATABASE_URL -a appname
 
 /// HEROKU 
