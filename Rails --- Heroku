@@ -4,6 +4,7 @@
 
 /// PULL DATABASE
     1. CREATE BACKUP FILE -  heroku pg:backups:capture --app retrospect-jr
+                          -  heroku pg:backups:capture --app crm-jr
 
     2. DROP LOCAL DB: rake db:drop
                             
@@ -18,6 +19,7 @@
 
 /// PG:BACKUP   -  https://devcenter.heroku.com/articles/heroku-postgres-backups
 heroku pg:backups:capture --app retrospect-jr
+!! heroku pg:backups:capture --app crm-jr
 heroku pg:backups:cancel
 
 Schedule-    heroku pg:backups:schedule DATABASE_URL --at '02:00 America/Los_Angeles' --app retrospect-jr
@@ -25,12 +27,14 @@ Schedule-    heroku pg:backups:schedule DATABASE_URL --at '02:00 America/Los_Ang
       NOTE: When a backup is restored to a new database, the schedule from the original database does not get restored, a new schedule needs to be created.
 Cancel-     heroku pg:backups:unschedule DATABASE_URL --app sushi
 View Schedules-    heroku pg:backups:schedules --app retrospect-jr
-Download1 (Makes PUBLIC URL)-   heroku pg:backups:url b001 --app sushi
+Download1 (Makes PUBLIC URL)-   heroku pg:backups:url b001 --app appname
 Download2 - heroku pg:backups:download
-Check Status- heroku pg:backups --app sushi
+Check Status- heroku pg:backups --app appname
 Delete Backup- heroku pg:backups:delete b101 --app foo
-Restore Backup- heroku pg:backups:restore b101 DATABASE_URL --app sushi
-Restore from URL- heroku pg:backups:restore 'https://s3.amazonaws.com/me/items/mydb.dump' DATABASE_URL -a sushi
+!! Restore Backup- heroku pg:backups:restore b101 DATABASE_URL --app appname
+              - heroku pg:backups:restore DATABASE_URL --app crm-jr   (no number makes latest   URL comes from download in terminal)
+              
+Restore from URL- heroku pg:backups:restore 'https://s3.amazonaws.com/me/items/mydb.dump' DATABASE_URL -a appname
 
 /// HEROKU 
 commit to github first
