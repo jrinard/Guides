@@ -1,0 +1,105 @@
+
+||| RVM INSTALL
+
+IN TERMINAL
+	\curl -sSL https://get.rvm.io | bash -s stable
+
+EDIT BASH FILE
+	open ~/.bash_profile
+	paste in “source ~/.rvm/scripts/rvm”
+	Save and Close File
+
+RESTART TERMINAL OR RUN “source ~/.bash_profile” FOR REFRESH IN CURRENT TERMINAL
+
+-------
+
+||| RUBY INSTALL IN RVM
+	rvm install 2.5.1
+
+WARNING LOG TO INVESTIGATE
+Joshuas-iMac:~ MYNAME$ rvm install 2.5.1
+Warning! PATH is not properly set up, /Users/MYNAME/.gem/ruby/2.5.1/bin is not at first place.
+         Usually this is caused by shell initialization files. Search for PATH=... entries.
+         You can also re-add RVM to your profile by running: rvm get stable --auto-dotfiles
+         To fix it temporarily in this shell session run: rvm use 2.5.1
+         To ignore this error add rvm_silence_path_mismatch_check_flag=1 to your ~/.rvmrc file.
+Searching for binary rubies, this might take some time.
+No binary rubies available for: osx/10.14/x86_64/ruby-2.5.1.
+Continuing with compilation. Please read 'rvm help mount' to get more information on binary rubies.
+
+
+RAN IN TERMINAL TO REMOVE WARNINGS - STILL TESTING
+rvm reset
+rvm version
+
+
+SET RUBY TYPE RUN IN TERMINAL
+	rvm use 2.5.1 to setruby     OR 
+	rvm --default use 2.5.1    for default
+
+INSTALLS Ruby Documentation
+	rvm docs generate-ri
+
+
+—————
+
+||| IMPLIMENTING RVM IN PROJECT TO ISOLATE GEMS
+
+IN TERMINAL IN PROJECT ROOT
+rvm --default use 2.5.1 
+rvm --ruby-version use 2.5.1@reviewbox	 
+SECOND ATTEMPT NEEDED APPEND rvm --ruby-version use 2.5.1@crm --create
+Creates 2 files gems and version
+
+CD ..    up a level and back into your project root
+Run to bundle gems
+gem install bundler && bundle
+
+Things that require research
+
+Ruby Sass is deprecated and will be unmaintained as of 26 March 2019.
+
+* If you use Sass as a command-line tool, we recommend using Dart Sass, the new
+  primary implementation: https://sass-lang.com/install
+
+* If you use Sass as a plug-in for a Ruby web framework, we recommend using the
+  sassc gem: https://github.com/sass/sassc-ruby#readme
+
+* For more details, please refer to the Sass blog:
+  http://sass.logdown.com/posts/7081811
+
+Post-install message from yard:
+--------------------------------------------------------------------------------
+As of YARD v0.9.2:
+
+RubyGems "--document=yri,yard" hooks are now supported. You can auto-configure
+YARD to automatically build the yri index for installed gems by typing:
+
+    $ yard config --gem-install-yri
+
+See `yard config --help` for more information on RubyGems install hooks.
+
+You can also add the following to your .gemspec to have YARD document your gem
+on install:
+
+    spec.metadata["yard.run"] = "yri" # use "yard" to build full HTML docs.
+
+--------------------------------------------------------------------------------
+
+BOOTED SERVER ERROR
+
+
+2020-02-19 20:50:46.453 PST [72775] FATAL:  database files are incompatible with server
+2020-02-19 20:50:46.453 PST [72775] DETAIL:  The data directory was initialized by PostgreSQL version 9.6, which is not compatible with this version 12.2.
+
+RESTARTED POSTGRES WITH
+	brew services restart postgresql
+
+Thinking postgres needs updated?
+
+Upgraded POSTGRES with
+	brew postgresql-upgrade-database
+
+SERVER BOOTED SUCCESS
+
+
