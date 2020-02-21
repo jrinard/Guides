@@ -1,0 +1,24 @@
+|| Heroku Staging - https://devcenter.heroku.com/articles/multiple-environments
+
+Setup Stage App on Heroku - stage = whatever name
+  heroku create —remote stage
+
+Push Code to Heroku
+  git push stage master
+
+Setup Database
+  heroku run rake db:migrate --remote stage
+
+Setup variables to match production app for API’s
+
+Make Pipeline On Heroku - https://devcenter.heroku.com/articles/pipelines#creating-pipelines
+  Github auto pushes —>  stage —> promotion —> production
+
+
+Example of logs
+  heroku logs --tail --remote stage
+
+PROMOTION is done in heroku pipeline or in terminal with
+heroku pipeline:promote -r stage  
+
+	stage = remote name assigned above
