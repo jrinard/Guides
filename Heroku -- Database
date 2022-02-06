@@ -1,0 +1,43 @@
+2-5-2022 Transfered Database from old crm-jr to crm-rmedia    : https://devcenter.heroku.com/articles/heroku-postgres-backups
+
+1. PRE WORK
+    Made second app at new domain and setup database columns to match. Not sure if it was required but that is what I did.
+2. MAKE BACKUP on old capp
+    heroku pg:backups --app crm-jr
+3. GET INFO - which includes database name in this case the first database is DATABASE - b441 is the backup
+    heroku pg:backups:info b441 --app crm-jr
+4. Restore backup to new site. (DATABASE_URL was actually used because the first database is named that. Afterwords they give it a color)
+       heroku pg:backups:restore crm-jr::b441 DATABASE_URL --app crm-rmedia
+
+At this point it was done.
+
+5. Extra Commands of notes
+
+    Restore database from backup
+    heroku pg:backups:restore b441 DATABASE_URL --app crm-jr
+
+
+
+
+
+------------------- PREVIOUS UPDATE
+||| UPGRADING POSTGRES DATABASE ON HEROKU - https://devcenter.heroku.com/articles/upgrading-heroku-postgres-databases#upgrading-with-pg-copy
+    heroku addons:create heroku-postgresql:hobby-basic
+    hobby-dev = plan   dev is free
+
+|| ENTER Maintenance Mode
+  heroku maintenance:on
+
+|| TRANSFER DATA FROM OLD DATABASE TO NEW ONE
+    heroku pg:copy DATABASE_URL HEROKU_POSTGRESQL_PINK --app sushi
+    old database then new one
+    EXAMPLE heroku pg:copy postgresql-curved-30347 HEROKU_POSTGRESQL_PINK_URL --app retrospect-jr
+
+||PROMOTE NEW DATABASE
+    heroku pg:promote HEROKU_POSTGRESQL_PINK
+
+|| Exit maintenance mode
+  heroku maintenance:off
+
+|| CONFIRM - DATABASE_URL IS LIVE
+   heroku pg:info
