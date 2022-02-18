@@ -2,19 +2,38 @@ API
 API stands for "Application Programming Interface"
 
 
-
+require http
 
 NOTE FOR BASIC AUTH HEADERS
 If you go in postman you can create basic auth hash that converts api key and auth.
 
 @key_api = 'RANDOMLONGLETTERSMADEINPOSTMANTOREFLECTAPIENV'
-  url = URI("https://URL/api/1.1/json/tickets/")
-      https = Net::HTTP.new(url.host, url.port)
-      https.use_ssl = true
-      request = Net::HTTP::Get.new(url)
-      request["Authorization"] = "Basic #{@key_api}="
-      request["Cookie"] = "pbrand-csrftoken=#{@key_auth}"
-      response = https.request(request)
-      puts "================="
-      puts response.read_body
-      puts "================="
+
+//// 1ST OPTION (ASSUMING YOU HAVE REQUIRE(S)
+        url = URI("https://URL/api/1.1/json/tickets/")
+            https = Net::HTTP.new(url.host, url.port)
+            https.use_ssl = true
+            request = Net::HTTP::Get.new(url)
+            request["Authorization"] = "Basic #{@key_api}="
+            request["Cookie"] = "pbrand-csrftoken=#{@key_auth}"
+            response = https.request(request)
+            puts "================="
+            puts response.read_body
+            puts "================="
+            
+
+/// SECOND OPTION - REST CLIENT - REQUIRED GEM
+      begin
+       resp = RestClient.get('https://URL/api/1.1/json/tickets/',
+         {
+           :Authorization => "Basic #{@key_api}="
+         } )
+       incomingTickets = JSON.parse(resp)
+       puts ap incomingTickets
+         rescue RestClient::ExceptionWithResponse => e
+              e.resp
+              puts "=== API RESPONSE ===".green
+              puts e.resp
+              puts "=========================".green
+
+     end
