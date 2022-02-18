@@ -8,6 +8,7 @@ NOTE FOR BASIC AUTH HEADERS
 If you go in postman you can create basic auth hash that converts api key and auth.
 
 @key_api = 'RANDOMLONGLETTERSMADEINPOSTMANTOREFLECTAPIENV'
+@key_auth = 'RANDOMLONGLETTERSMDAEINPOSTMAN'
 
 //// 1ST OPTION (ASSUMING YOU HAVE REQUIRE(S)
         url = URI("https://URL/api/1.1/json/tickets/")
